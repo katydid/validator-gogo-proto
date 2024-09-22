@@ -18,6 +18,8 @@ import (
 	"github.com/katydid/validator-go/parser"
 )
 
+type errValue struct{}
+
 func (*errValue) Double() (float64, error) {
 	return 0, parser.ErrNotDouble
 }
