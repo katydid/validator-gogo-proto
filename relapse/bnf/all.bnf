@@ -122,7 +122,7 @@ AllGrammar
   ;
 
 Grammar
-  : Pattern                     << &Grammar{TopPattern: $0.(*Pattern)}, nil >>
+  : Pattern                     << &Grammar{TopPattern: $0.(*Pattern)}, nil >>  
   | Pattern PatternDecls        << &Grammar{TopPattern: $0.(*Pattern), PatternDecls: $1.([]*PatternDecl)}, nil >>
   | PatternDecls                << &Grammar{PatternDecls:$0.([]*PatternDecl)}, nil >>
   ;
@@ -162,7 +162,7 @@ PatternDecl
 
 Empty
   : "<empty>" << &Keyword{Value: "<empty>"}, nil >>
-  | Space "<empty>" <<
+  | Space "<empty>" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "<empty>",
@@ -479,7 +479,7 @@ Bool
   ;
 Equal
   : "="  << &Keyword{Value: "="}, nil >>
-  | Space "=" <<
+  | Space "=" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "=",
@@ -489,7 +489,7 @@ Equal
 
 OpenParen
   : "(" << &Keyword{Value: "("}, nil >>
-  | Space "(" <<
+  | Space "(" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "(",
@@ -499,7 +499,7 @@ OpenParen
 
 CloseParen
   : ")" << &Keyword{Value: ")"}, nil >>
-  | Space ")" <<
+  | Space ")" << 
     &Keyword{
       Before: $0.(*Space),
       Value: ")",
@@ -509,7 +509,7 @@ CloseParen
 
 OpenCurly
   : "{" << &Keyword{Value: "{"}, nil >>
-  | Space "{" <<
+  | Space "{" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "{",
@@ -519,7 +519,7 @@ OpenCurly
 
 CloseCurly
   : "}" << &Keyword{Value: "}"}, nil >>
-  | Space "}" <<
+  | Space "}" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "}",
@@ -529,7 +529,7 @@ CloseCurly
 
 Comma
   : "," << &Keyword{Value: ","}, nil >>
-  | Space "," <<
+  | Space "," << 
     &Keyword{
       Before: $0.(*Space),
       Value: ",",
@@ -539,7 +539,7 @@ Comma
 
 SemiColon
   : ";" << &Keyword{Value: ";"}, nil >>
-  | Space ";" <<
+  | Space ";" << 
     &Keyword{
       Before: $0.(*Space),
       Value: ";",
@@ -549,7 +549,7 @@ SemiColon
 
 Hash
   : "#" << &Keyword{Value: "#"}, nil >>
-  | Space "#" <<
+  | Space "#" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "#",
@@ -559,7 +559,7 @@ Hash
 
 Ampersand
   : "&" << &Keyword{Value: "&"}, nil >>
-  | Space "&" <<
+  | Space "&" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "&",
@@ -569,7 +569,7 @@ Ampersand
 
 Pipe
   : "|" << &Keyword{Value: "|"}, nil >>
-  | Space "|" <<
+  | Space "|" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "|",
@@ -579,7 +579,7 @@ Pipe
 
 OpenBracket
   : "[" << &Keyword{Value: "["}, nil >>
-  | Space "[" <<
+  | Space "[" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "[",
@@ -589,7 +589,7 @@ OpenBracket
 
 CloseBracket
   : "]" << &Keyword{Value: "]"}, nil >>
-  | Space "]" <<
+  | Space "]" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "]",
@@ -599,7 +599,7 @@ CloseBracket
 
 Colon
   : ":" << &Keyword{Value: ":"}, nil >>
-  | Space ":" <<
+  | Space ":" << 
     &Keyword{
       Before: $0.(*Space),
       Value: ":",
@@ -609,7 +609,7 @@ Colon
 
 Exclamation
   : "!" << &Keyword{Value: "!"}, nil >>
-  | Space "!" <<
+  | Space "!" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "!",
@@ -619,7 +619,7 @@ Exclamation
 
 Star
   : "*" << &Keyword{Value: "*"}, nil >>
-  | Space "*" <<
+  | Space "*" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "*",
@@ -629,7 +629,7 @@ Star
 
 Underscore
   : "_" << &Keyword{Value: "_"}, nil >>
-  | Space "_" <<
+  | Space "_" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "_",
@@ -639,7 +639,7 @@ Underscore
 
 Dot
   : "." << &Keyword{Value: "."}, nil >>
-  | Space "." <<
+  | Space "." << 
     &Keyword{
       Before: $0.(*Space),
       Value: ".",
@@ -649,7 +649,7 @@ Dot
 
 At
   : "@" << &Keyword{Value: "@"}, nil >>
-  | Space "@" <<
+  | Space "@" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "@",
@@ -659,7 +659,7 @@ At
 
 RightArrow
   : "->" << &Keyword{Value: "->"}, nil >>
-  | Space "->" <<
+  | Space "->" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "->",
@@ -669,7 +669,7 @@ RightArrow
 
 EqualEqual
   : "=="  << &Keyword{Value: "=="}, nil >>
-  | Space "==" <<
+  | Space "==" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "==",
@@ -679,7 +679,7 @@ EqualEqual
 
 ExclamationEqual
   : "!="  << &Keyword{Value: "!="}, nil >>
-  | Space "!=" <<
+  | Space "!=" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "!=",
@@ -689,7 +689,7 @@ ExclamationEqual
 
 LessThan
   : "<"  << &Keyword{Value: "<"}, nil >>
-  | Space "<" <<
+  | Space "<" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "<",
@@ -699,7 +699,7 @@ LessThan
 
 GreaterThan
   : ">"  << &Keyword{Value: ">"}, nil >>
-  | Space ">" <<
+  | Space ">" << 
     &Keyword{
       Before: $0.(*Space),
       Value: ">",
@@ -709,7 +709,7 @@ GreaterThan
 
 LessEqual
   : "<="  << &Keyword{Value: "<="}, nil >>
-  | Space "<=" <<
+  | Space "<=" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "<=",
@@ -719,7 +719,7 @@ LessEqual
 
 GreaterEqual
   : ">="  << &Keyword{Value: ">="}, nil >>
-  | Space ">=" <<
+  | Space ">=" << 
     &Keyword{
       Before: $0.(*Space),
       Value: ">=",
@@ -729,7 +729,7 @@ GreaterEqual
 
 TildeEqual
   : "~="  << &Keyword{Value: "~="}, nil >>
-  | Space "~=" <<
+  | Space "~=" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "~=",
@@ -739,7 +739,7 @@ TildeEqual
 
 StarEqual
   : "*="  << &Keyword{Value: "*="}, nil >>
-  | Space "*=" <<
+  | Space "*=" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "*=",
@@ -749,7 +749,7 @@ StarEqual
 
 CaretEqual
   : "^="  << &Keyword{Value: "^="}, nil >>
-  | Space "^=" <<
+  | Space "^=" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "^=",
@@ -759,7 +759,7 @@ CaretEqual
 
 DollarEqual
   : "$="  << &Keyword{Value: "$="}, nil >>
-  | Space "$=" <<
+  | Space "$=" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "$=",
@@ -769,7 +769,7 @@ DollarEqual
 
 ColonColon
   : "::"  << &Keyword{Value: "::"}, nil >>
-  | Space "::" <<
+  | Space "::" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "::",
@@ -779,7 +779,7 @@ ColonColon
 
 QuestionMark
   : "?"  << &Keyword{Value: "?"}, nil >>
-  | Space "?" <<
+  | Space "?" << 
     &Keyword{
       Before: $0.(*Space),
       Value: "?",
