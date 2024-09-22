@@ -34,12 +34,13 @@ checklicense:
 	parser/debug/debug.proto \
 	bnf \
 	doc.go \
+	tools/tools.go \
 	.svg \
 	.txt \
 	COPIED_FROM_GO \
-	.travis.yml \
-	install-protobuf.sh \
-	install-godeps.sh \
+	go.mod \
+	go.sum \
+	install_protoc.sh \
 	parser/yaml/issues.md
 
 test:

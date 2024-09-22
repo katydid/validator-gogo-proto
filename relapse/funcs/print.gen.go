@@ -51,7 +51,7 @@ func init() {
 	Register("print", PrintDouble)
 }
 
-//PrintDouble returns a function that prints out the value of the argument function and returns its value.
+// PrintDouble returns a function that prints out the value of the argument function and returns its value.
 func PrintDouble(e Double) Double {
 	return &printDouble{
 		E:    e,
@@ -104,7 +104,7 @@ func init() {
 	Register("print", PrintInt)
 }
 
-//PrintInt returns a function that prints out the value of the argument function and returns its value.
+// PrintInt returns a function that prints out the value of the argument function and returns its value.
 func PrintInt(e Int) Int {
 	return &printInt{
 		E:    e,
@@ -157,7 +157,7 @@ func init() {
 	Register("print", PrintUint)
 }
 
-//PrintUint returns a function that prints out the value of the argument function and returns its value.
+// PrintUint returns a function that prints out the value of the argument function and returns its value.
 func PrintUint(e Uint) Uint {
 	return &printUint{
 		E:    e,
@@ -210,7 +210,7 @@ func init() {
 	Register("print", PrintBool)
 }
 
-//PrintBool returns a function that prints out the value of the argument function and returns its value.
+// PrintBool returns a function that prints out the value of the argument function and returns its value.
 func PrintBool(e Bool) Bool {
 	return &printBool{
 		E:    e,
@@ -263,7 +263,7 @@ func init() {
 	Register("print", PrintString)
 }
 
-//PrintString returns a function that prints out the value of the argument function and returns its value.
+// PrintString returns a function that prints out the value of the argument function and returns its value.
 func PrintString(e String) String {
 	return &printString{
 		E:    e,
@@ -316,7 +316,7 @@ func init() {
 	Register("print", PrintBytes)
 }
 
-//PrintBytes returns a function that prints out the value of the argument function and returns its value.
+// PrintBytes returns a function that prints out the value of the argument function and returns its value.
 func PrintBytes(e Bytes) Bytes {
 	return &printBytes{
 		E:    e,
@@ -369,7 +369,7 @@ func init() {
 	Register("print", PrintDoubles)
 }
 
-//PrintDoubles returns a function that prints out the value of the argument function and returns its value.
+// PrintDoubles returns a function that prints out the value of the argument function and returns its value.
 func PrintDoubles(e Doubles) Doubles {
 	return &printDoubles{
 		E:    e,
@@ -422,7 +422,7 @@ func init() {
 	Register("print", PrintInts)
 }
 
-//PrintInts returns a function that prints out the value of the argument function and returns its value.
+// PrintInts returns a function that prints out the value of the argument function and returns its value.
 func PrintInts(e Ints) Ints {
 	return &printInts{
 		E:    e,
@@ -475,7 +475,7 @@ func init() {
 	Register("print", PrintUints)
 }
 
-//PrintUints returns a function that prints out the value of the argument function and returns its value.
+// PrintUints returns a function that prints out the value of the argument function and returns its value.
 func PrintUints(e Uints) Uints {
 	return &printUints{
 		E:    e,
@@ -528,7 +528,7 @@ func init() {
 	Register("print", PrintBools)
 }
 
-//PrintBools returns a function that prints out the value of the argument function and returns its value.
+// PrintBools returns a function that prints out the value of the argument function and returns its value.
 func PrintBools(e Bools) Bools {
 	return &printBools{
 		E:    e,
@@ -581,7 +581,7 @@ func init() {
 	Register("print", PrintStrings)
 }
 
-//PrintStrings returns a function that prints out the value of the argument function and returns its value.
+// PrintStrings returns a function that prints out the value of the argument function and returns its value.
 func PrintStrings(e Strings) Strings {
 	return &printStrings{
 		E:    e,
@@ -634,7 +634,7 @@ func init() {
 	Register("print", PrintListOfBytes)
 }
 
-//PrintListOfBytes returns a function that prints out the value of the argument function and returns its value.
+// PrintListOfBytes returns a function that prints out the value of the argument function and returns its value.
 func PrintListOfBytes(e ListOfBytes) ListOfBytes {
 	return &printListOfBytes{
 		E:    e,

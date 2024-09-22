@@ -60,7 +60,7 @@ func (this *varDouble) String() string {
 	return "$double"
 }
 
-//DoubleVar returns a variable of type Double
+// DoubleVar returns a variable of type Double
 func DoubleVar() *varDouble {
 	h := uint64(17)
 	h = 31*h + 2052876273
@@ -121,7 +121,7 @@ func (this *varInt) String() string {
 	return "$int"
 }
 
-//IntVar returns a variable of type Int
+// IntVar returns a variable of type Int
 func IntVar() *varInt {
 	h := uint64(17)
 	h = 31*h + 73679
@@ -182,7 +182,7 @@ func (this *varUint) String() string {
 	return "$uint"
 }
 
-//UintVar returns a variable of type Uint
+// UintVar returns a variable of type Uint
 func UintVar() *varUint {
 	h := uint64(17)
 	h = 31*h + 2636666
@@ -243,7 +243,7 @@ func (this *varBool) String() string {
 	return "$bool"
 }
 
-//BoolVar returns a variable of type Bool
+// BoolVar returns a variable of type Bool
 func BoolVar() *varBool {
 	h := uint64(17)
 	h = 31*h + 2076426
@@ -304,7 +304,7 @@ func (this *varString) String() string {
 	return "$string"
 }
 
-//StringVar returns a variable of type String
+// StringVar returns a variable of type String
 func StringVar() *varString {
 	h := uint64(17)
 	h = 31*h + 2486848561
@@ -365,7 +365,7 @@ func (this *varBytes) String() string {
 	return "$[]byte"
 }
 
-//BytesVar returns a variable of type Bytes
+// BytesVar returns a variable of type Bytes
 func BytesVar() *varBytes {
 	h := uint64(17)
 	h = 31*h + 64671819

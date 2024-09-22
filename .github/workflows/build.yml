@@ -7,28 +7,67 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
+      with:
+        path: gopath/github.com/katydid/validator-go
+    - name: Checkout gogoprotobuf
+      uses: actions/checkout@v4
+      with:
+        repository: gogo/protobuf
+        path: gopath/github.com/gogo/protobuf
+    - name: Checkout testsuite
+      uses: actions/checkout@v4
+      with:
+        repository: katydid/testsuite
+        path: gopath/github.com/katydid/testsuite
     - name: Setup Go
       uses: actions/setup-go@v3
       with:
-        go-version: 1.19
+        go-version: 1.22
     - name: Fetch dependencies
-      run: go mod download -x
+      run: |
+        cd gopath/github.com/katydid/validator-go
+        go mod download -x
     - name: Install tools
-      run: go install -x github.com/goccmack/gocc github.com/awalterschulze/goderive github.com/gogo/protobuf/protoc-gen-gogo
+      run: |
+        cd gopath/github.com/katydid/validator-go
+        go install -x github.com/goccmack/gocc
+        go install -x github.com/awalterschulze/goderive
+        go install -x github.com/gogo/protobuf/protoc-gen-gogo
+        go install -x github.com/katydid/checklicense
     - name: Setup protoc
-      run: bash ${GITHUB_WORKSPACE}/install-protoc.sh
+      run: |
+        cd gopath/github.com/katydid/validator-go
+        ./install_protoc.sh
+    - name: Protoc version
+      run: |
+        cd gopath/github.com/katydid/validator-go
+        PATH=$HOME/bin:$PATH protoc --version
+    - name: env
+      run: env && go env && pwd
+    - name: tree
+      run: tree
     - name: Generate
-      run: make regenerate
+      run: |
+        cd gopath/github.com/katydid/validator-go
+        PATH=$HOME/bin:$PATH make regenerate
     - name: Build
-      run: make build
+      run: |
+        cd gopath/github.com/katydid/validator-go
+        make build
     - name: Test
-      run: make test
+      run: |
+        cd gopath/github.com/katydid/validator-go
+        make test
     - name: Vet
-      run: make vet
-    - name: Errcheck
-      run: make errcheck
+      run: |
+        cd gopath/github.com/katydid/validator-go
+        make vet
     - name: Checklicencse
-      run: make checklicense
+      run: |
+        cd gopath/github.com/katydid/validator-go
+        make checklicense
     - name: Diff
-      run: make diff
+      run: |
+        cd gopath/github.com/katydid/validator-go
+        make diff

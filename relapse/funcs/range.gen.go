@@ -87,7 +87,7 @@ func init() {
 	Register("range", RangeDoubles)
 }
 
-//RangeDoubles returns a function that returns a range of elements from a list.
+// RangeDoubles returns a function that returns a range of elements from a list.
 func RangeDoubles(list Doubles, from, to Int) Doubles {
 	return TrimDoubles(&rangeDoubles{
 		List:        list,
@@ -180,7 +180,7 @@ func init() {
 	Register("range", RangeInts)
 }
 
-//RangeInts returns a function that returns a range of elements from a list.
+// RangeInts returns a function that returns a range of elements from a list.
 func RangeInts(list Ints, from, to Int) Ints {
 	return TrimInts(&rangeInts{
 		List:        list,
@@ -273,7 +273,7 @@ func init() {
 	Register("range", RangeUints)
 }
 
-//RangeUints returns a function that returns a range of elements from a list.
+// RangeUints returns a function that returns a range of elements from a list.
 func RangeUints(list Uints, from, to Int) Uints {
 	return TrimUints(&rangeUints{
 		List:        list,
@@ -366,7 +366,7 @@ func init() {
 	Register("range", RangeBools)
 }
 
-//RangeBools returns a function that returns a range of elements from a list.
+// RangeBools returns a function that returns a range of elements from a list.
 func RangeBools(list Bools, from, to Int) Bools {
 	return TrimBools(&rangeBools{
 		List:        list,
@@ -459,7 +459,7 @@ func init() {
 	Register("range", RangeStrings)
 }
 
-//RangeStrings returns a function that returns a range of elements from a list.
+// RangeStrings returns a function that returns a range of elements from a list.
 func RangeStrings(list Strings, from, to Int) Strings {
 	return TrimStrings(&rangeStrings{
 		List:        list,
@@ -552,7 +552,7 @@ func init() {
 	Register("range", RangeListOfBytes)
 }
 
-//RangeListOfBytes returns a function that returns a range of elements from a list.
+// RangeListOfBytes returns a function that returns a range of elements from a list.
 func RangeListOfBytes(list ListOfBytes, from, to Int) ListOfBytes {
 	return TrimListOfBytes(&rangeListOfBytes{
 		List:        list,

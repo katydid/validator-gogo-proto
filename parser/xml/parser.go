@@ -86,7 +86,7 @@ func (p *xmlParser) Init(buf []byte) error {
 	buf = procInstPattern.ReplaceAll(buf, []byte{})
 	buf = bytes.TrimSpace(buf)
 	p.buf = buf
-	p.dec = NewDecoder(NewBuffer(buf))
+	p.dec = NewDecoder(bytes.NewBuffer(buf))
 	p.dec.Strict = false
 	return nil
 }

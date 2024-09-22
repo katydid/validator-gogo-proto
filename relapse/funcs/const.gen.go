@@ -18,7 +18,7 @@ type constDouble struct {
 	hash uint64
 }
 
-//DoubleConst returns a new constant function of type Double
+// DoubleConst returns a new constant function of type Double
 func DoubleConst(v float64) ConstDouble {
 	h := uint64(17)
 	h = 31*h + 2052876273
@@ -68,7 +68,7 @@ type constInt struct {
 	hash uint64
 }
 
-//IntConst returns a new constant function of type Int
+// IntConst returns a new constant function of type Int
 func IntConst(v int64) ConstInt {
 	h := uint64(17)
 	h = 31*h + 73679
@@ -118,7 +118,7 @@ type constUint struct {
 	hash uint64
 }
 
-//UintConst returns a new constant function of type Uint
+// UintConst returns a new constant function of type Uint
 func UintConst(v uint64) ConstUint {
 	h := uint64(17)
 	h = 31*h + 2636666
@@ -168,7 +168,7 @@ type constBool struct {
 	hash uint64
 }
 
-//BoolConst returns a new constant function of type Bool
+// BoolConst returns a new constant function of type Bool
 func BoolConst(v bool) ConstBool {
 	h := uint64(17)
 	h = 31*h + 2076426
@@ -218,7 +218,7 @@ type constString struct {
 	hash uint64
 }
 
-//StringConst returns a new constant function of type String
+// StringConst returns a new constant function of type String
 func StringConst(v string) ConstString {
 	h := uint64(17)
 	h = 31*h + 2486848561
@@ -268,7 +268,7 @@ type constBytes struct {
 	hash uint64
 }
 
-//BytesConst returns a new constant function of type Bytes
+// BytesConst returns a new constant function of type Bytes
 func BytesConst(v []byte) ConstBytes {
 	h := uint64(17)
 	h = 31*h + 64671819
@@ -318,7 +318,7 @@ type constDoubles struct {
 	hash uint64
 }
 
-//DoublesConst returns a new constant function of type Doubles
+// DoublesConst returns a new constant function of type Doubles
 func DoublesConst(v []float64) ConstDoubles {
 	h := uint64(17)
 	h = 31*h + 63639164578
@@ -372,7 +372,7 @@ type constInts struct {
 	hash uint64
 }
 
-//IntsConst returns a new constant function of type Ints
+// IntsConst returns a new constant function of type Ints
 func IntsConst(v []int64) ConstInts {
 	h := uint64(17)
 	h = 31*h + 2284164
@@ -426,7 +426,7 @@ type constUints struct {
 	hash uint64
 }
 
-//UintsConst returns a new constant function of type Uints
+// UintsConst returns a new constant function of type Uints
 func UintsConst(v []uint64) ConstUints {
 	h := uint64(17)
 	h = 31*h + 81736761
@@ -480,7 +480,7 @@ type constBools struct {
 	hash uint64
 }
 
-//BoolsConst returns a new constant function of type Bools
+// BoolsConst returns a new constant function of type Bools
 func BoolsConst(v []bool) ConstBools {
 	h := uint64(17)
 	h = 31*h + 64369321
@@ -534,7 +534,7 @@ type constStrings struct {
 	hash uint64
 }
 
-//StringsConst returns a new constant function of type Strings
+// StringsConst returns a new constant function of type Strings
 func StringsConst(v []string) ConstStrings {
 	h := uint64(17)
 	h = 31*h + 77092305506
@@ -588,7 +588,7 @@ type constListOfBytes struct {
 	hash uint64
 }
 
-//ListOfBytesConst returns a new constant function of type ListOfBytes
+// ListOfBytesConst returns a new constant function of type ListOfBytes
 func ListOfBytesConst(v [][]byte) ConstListOfBytes {
 	h := uint64(17)
 	h = 31*h + 65169257167589942

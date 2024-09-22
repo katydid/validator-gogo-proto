@@ -3,10 +3,12 @@
 
 package types
 
-import proto "github.com/gogo/protobuf/proto"
-import fmt "fmt"
-import math "math"
-import _ "github.com/gogo/protobuf/gogoproto"
+import (
+	fmt "fmt"
+	_ "github.com/gogo/protobuf/gogoproto"
+	proto "github.com/gogo/protobuf/proto"
+	math "math"
+)
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal
@@ -17,7 +19,7 @@ var _ = math.Inf
 // is compatible with the proto package it is being compiled against.
 // A compilation error at this line likely means your copy of the
 // proto package needs to be updated.
-const _ = proto.GoGoProtoPackageIsVersion2 // please upgrade the proto package
+const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
 type Type int32
 
@@ -52,6 +54,7 @@ var Type_name = map[int32]string{
 	209: "LIST_STRING",
 	212: "LIST_BYTES",
 }
+
 var Type_value = map[string]int32{
 	"UNKNOWN":       0,
 	"SINGLE_DOUBLE": 101,
@@ -73,9 +76,11 @@ func (x Type) Enum() *Type {
 	*p = x
 	return p
 }
+
 func (x Type) String() string {
 	return proto.EnumName(Type_name, int32(x))
 }
+
 func (x *Type) UnmarshalJSON(data []byte) error {
 	value, err := proto.UnmarshalJSONEnum(Type_value, data, "Type")
 	if err != nil {
@@ -84,17 +89,18 @@ func (x *Type) UnmarshalJSON(data []byte) error {
 	*x = Type(value)
 	return nil
 }
+
 func (Type) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_types_d4b921c1c346e61a, []int{0}
+	return fileDescriptor_d938547f84707355, []int{0}
 }
 
 func init() {
 	proto.RegisterEnum("types.Type", Type_name, Type_value)
 }
 
-func init() { proto.RegisterFile("types.proto", fileDescriptor_types_d4b921c1c346e61a) }
+func init() { proto.RegisterFile("types.proto", fileDescriptor_d938547f84707355) }
 
-var fileDescriptor_types_d4b921c1c346e61a = []byte{
+var fileDescriptor_d938547f84707355 = []byte{
 	// 223 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x2e, 0xa9, 0x2c, 0x48,
 	0x2d, 0xd6, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x05, 0x73, 0xa4, 0x74, 0xd3, 0x33, 0x4b,

@@ -23,19 +23,18 @@ import (
 	"github.com/katydid/validator-go/relapse/testsuite"
 )
 
-var bN = flag.Int("b.N", 0, "the number of times the benchmark function's target code must run")
-
-func init() {
-	flag.Parse()
-}
-
 func BenchmarkSuite(b *testing.B) {
+	var bN = flag.Int("b.N", 0, "the number of times the benchmark function's target code must run")
+	flag.Parse()
 	if !testsuite.BenchSuiteExists() {
 		b.Skip("benchsuite not available")
 	}
 	benches, err := testsuite.ReadBenchmarkSuite()
 	if err != nil {
 		b.Fatal(err)
+	}
+	if *bN != 0 {
+		b.N = *bN
 	}
 	for _, benchCase := range benches {
 		b.Run(benchCase.Name, func(b *testing.B) {
@@ -46,9 +45,6 @@ func BenchmarkSuite(b *testing.B) {
 
 func bench(b *testing.B, grammar *ast.Grammar, parsers []testsuite.ResetParser, record bool) {
 	num := len(parsers)
-	if *bN != 0 {
-		b.N = *bN
-	}
 	var m *mem.Mem
 	var err error
 	if record {

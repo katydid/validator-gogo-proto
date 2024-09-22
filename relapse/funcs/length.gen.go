@@ -51,7 +51,7 @@ func init() {
 	Register("length", LenDoubles)
 }
 
-//LenDoubles returns a function that returns the length of a list of type Doubles
+// LenDoubles returns a function that returns the length of a list of type Doubles
 func LenDoubles(e Doubles) Int {
 	return TrimInt(&lenDoubles{
 		E:           e,
@@ -106,7 +106,7 @@ func init() {
 	Register("length", LenInts)
 }
 
-//LenInts returns a function that returns the length of a list of type Ints
+// LenInts returns a function that returns the length of a list of type Ints
 func LenInts(e Ints) Int {
 	return TrimInt(&lenInts{
 		E:           e,
@@ -161,7 +161,7 @@ func init() {
 	Register("length", LenUints)
 }
 
-//LenUints returns a function that returns the length of a list of type Uints
+// LenUints returns a function that returns the length of a list of type Uints
 func LenUints(e Uints) Int {
 	return TrimInt(&lenUints{
 		E:           e,
@@ -216,7 +216,7 @@ func init() {
 	Register("length", LenBools)
 }
 
-//LenBools returns a function that returns the length of a list of type Bools
+// LenBools returns a function that returns the length of a list of type Bools
 func LenBools(e Bools) Int {
 	return TrimInt(&lenBools{
 		E:           e,
@@ -271,7 +271,7 @@ func init() {
 	Register("length", LenStrings)
 }
 
-//LenStrings returns a function that returns the length of a list of type Strings
+// LenStrings returns a function that returns the length of a list of type Strings
 func LenStrings(e Strings) Int {
 	return TrimInt(&lenStrings{
 		E:           e,
@@ -326,7 +326,7 @@ func init() {
 	Register("length", LenListOfBytes)
 }
 
-//LenListOfBytes returns a function that returns the length of a list of type ListOfBytes
+// LenListOfBytes returns a function that returns the length of a list of type ListOfBytes
 func LenListOfBytes(e ListOfBytes) Int {
 	return TrimInt(&lenListOfBytes{
 		E:           e,
@@ -381,7 +381,7 @@ func init() {
 	Register("length", LenString)
 }
 
-//LenString returns a function that returns the length of a list of type String
+// LenString returns a function that returns the length of a list of type String
 func LenString(e String) Int {
 	return TrimInt(&lenString{
 		E:           e,
@@ -436,7 +436,7 @@ func init() {
 	Register("length", LenBytes)
 }
 
-//LenBytes returns a function that returns the length of a list of type Bytes
+// LenBytes returns a function that returns the length of a list of type Bytes
 func LenBytes(e Bytes) Int {
 	return TrimInt(&lenBytes{
 		E:           e,

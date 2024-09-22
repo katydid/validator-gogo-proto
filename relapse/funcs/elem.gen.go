@@ -69,7 +69,7 @@ func init() {
 	Register("elem", ElemDoubles)
 }
 
-//ElemDoubles returns a function that returns the n'th element of the list.
+// ElemDoubles returns a function that returns the n'th element of the list.
 func ElemDoubles(list Doubles, n Int) Double {
 	return TrimDouble(&elemDoubles{
 		List:        list,
@@ -143,7 +143,7 @@ func init() {
 	Register("elem", ElemInts)
 }
 
-//ElemInts returns a function that returns the n'th element of the list.
+// ElemInts returns a function that returns the n'th element of the list.
 func ElemInts(list Ints, n Int) Int {
 	return TrimInt(&elemInts{
 		List:        list,
@@ -217,7 +217,7 @@ func init() {
 	Register("elem", ElemUints)
 }
 
-//ElemUints returns a function that returns the n'th element of the list.
+// ElemUints returns a function that returns the n'th element of the list.
 func ElemUints(list Uints, n Int) Uint {
 	return TrimUint(&elemUints{
 		List:        list,
@@ -291,7 +291,7 @@ func init() {
 	Register("elem", ElemBools)
 }
 
-//ElemBools returns a function that returns the n'th element of the list.
+// ElemBools returns a function that returns the n'th element of the list.
 func ElemBools(list Bools, n Int) Bool {
 	return TrimBool(&elemBools{
 		List:        list,
@@ -365,7 +365,7 @@ func init() {
 	Register("elem", ElemStrings)
 }
 
-//ElemStrings returns a function that returns the n'th element of the list.
+// ElemStrings returns a function that returns the n'th element of the list.
 func ElemStrings(list Strings, n Int) String {
 	return TrimString(&elemStrings{
 		List:        list,
@@ -439,7 +439,7 @@ func init() {
 	Register("elem", ElemListOfBytes)
 }
 
-//ElemListOfBytes returns a function that returns the n'th element of the list.
+// ElemListOfBytes returns a function that returns the n'th element of the list.
 func ElemListOfBytes(list ListOfBytes, n Int) Bytes {
 	return TrimBytes(&elemListOfBytes{
 		List:        list,

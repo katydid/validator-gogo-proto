@@ -57,7 +57,7 @@ func init() {
 	Register("contains", ContainsInt)
 }
 
-//ContainsInt returns a function that checks whether the element is contained in the list.
+// ContainsInt returns a function that checks whether the element is contained in the list.
 func ContainsInt(element Int, list ConstInts) (Bool, error) {
 	if list.HasVariable() {
 		return nil, ErrContainsListNotConst{}
@@ -131,7 +131,7 @@ func init() {
 	Register("contains", ContainsUint)
 }
 
-//ContainsUint returns a function that checks whether the element is contained in the list.
+// ContainsUint returns a function that checks whether the element is contained in the list.
 func ContainsUint(element Uint, list ConstUints) (Bool, error) {
 	if list.HasVariable() {
 		return nil, ErrContainsListNotConst{}
@@ -205,7 +205,7 @@ func init() {
 	Register("contains", ContainsString)
 }
 
-//ContainsString returns a function that checks whether the element is contained in the list.
+// ContainsString returns a function that checks whether the element is contained in the list.
 func ContainsString(element String, list ConstStrings) (Bool, error) {
 	if list.HasVariable() {
 		return nil, ErrContainsListNotConst{}

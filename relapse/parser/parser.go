@@ -3,8 +3,8 @@
 package parser
 
 import (
-	"bytes"
 	"fmt"
+	"strings"
 
 	parseError "github.com/katydid/validator-go/relapse/errors"
 	"github.com/katydid/validator-go/relapse/token"
@@ -66,7 +66,7 @@ func (s *stack) popN(items int) []Attrib {
 }
 
 func (s *stack) String() string {
-	w := new(bytes.Buffer)
+	w := new(strings.Builder)
 	fmt.Fprintf(w, "stack:\n")
 	for i, st := range s.state {
 		fmt.Fprintf(w, "\t%d: %d , ", i, st)
@@ -91,6 +91,7 @@ type Parser struct {
 	stack     *stack
 	nextToken *token.Token
 	pos       int
+	Context   Context
 }
 
 type Scanner interface {
@@ -202,7 +203,7 @@ func (p *Parser) Parse(scanner Scanner) (res interface{}, err error) {
 			p.nextToken = scanner.Scan()
 		case reduce:
 			prod := productionsTable[int(act)]
-			attrib, err := prod.ReduceFunc(p.stack.popN(prod.NumSymbols))
+			attrib, err := prod.ReduceFunc(p.stack.popN(prod.NumSymbols), p.Context)
 			if err != nil {
 				return nil, p.newError(err)
 			} else {

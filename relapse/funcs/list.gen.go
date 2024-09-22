@@ -11,7 +11,7 @@ type listOfDouble struct {
 	hasVariable bool
 }
 
-//NewListOfDouble returns a new function that when evaluated returns a list of type Double
+// NewListOfDouble returns a new function that when evaluated returns a list of type Double
 func NewListOfDouble(v []Double) Doubles {
 	h := uint64(17)
 	h = 31*h + 63639164578
@@ -92,7 +92,7 @@ type listOfInt struct {
 	hasVariable bool
 }
 
-//NewListOfInt returns a new function that when evaluated returns a list of type Int
+// NewListOfInt returns a new function that when evaluated returns a list of type Int
 func NewListOfInt(v []Int) Ints {
 	h := uint64(17)
 	h = 31*h + 2284164
@@ -173,7 +173,7 @@ type listOfUint struct {
 	hasVariable bool
 }
 
-//NewListOfUint returns a new function that when evaluated returns a list of type Uint
+// NewListOfUint returns a new function that when evaluated returns a list of type Uint
 func NewListOfUint(v []Uint) Uints {
 	h := uint64(17)
 	h = 31*h + 81736761
@@ -254,7 +254,7 @@ type listOfBool struct {
 	hasVariable bool
 }
 
-//NewListOfBool returns a new function that when evaluated returns a list of type Bool
+// NewListOfBool returns a new function that when evaluated returns a list of type Bool
 func NewListOfBool(v []Bool) Bools {
 	h := uint64(17)
 	h = 31*h + 64369321
@@ -335,7 +335,7 @@ type listOfString struct {
 	hasVariable bool
 }
 
-//NewListOfString returns a new function that when evaluated returns a list of type String
+// NewListOfString returns a new function that when evaluated returns a list of type String
 func NewListOfString(v []String) Strings {
 	h := uint64(17)
 	h = 31*h + 77092305506
@@ -416,7 +416,7 @@ type listOfBytes struct {
 	hasVariable bool
 }
 
-//NewListOfBytes returns a new function that when evaluated returns a list of type Bytes
+// NewListOfBytes returns a new function that when evaluated returns a list of type Bytes
 func NewListOfBytes(v []Bytes) ListOfBytes {
 	h := uint64(17)
 	h = 31*h + 65169257167589942

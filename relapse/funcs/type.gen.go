@@ -48,7 +48,7 @@ func init() {
 	Register("type", TypeDouble)
 }
 
-//TypeDouble returns a function that returns true if the error returned by the argument function is nil.
+// TypeDouble returns a function that returns true if the error returned by the argument function is nil.
 func TypeDouble(v Double) Bool {
 	return TrimBool(&typDouble{
 		E:           v,
@@ -100,7 +100,7 @@ func init() {
 	Register("type", TypeInt)
 }
 
-//TypeInt returns a function that returns true if the error returned by the argument function is nil.
+// TypeInt returns a function that returns true if the error returned by the argument function is nil.
 func TypeInt(v Int) Bool {
 	return TrimBool(&typInt{
 		E:           v,
@@ -152,7 +152,7 @@ func init() {
 	Register("type", TypeUint)
 }
 
-//TypeUint returns a function that returns true if the error returned by the argument function is nil.
+// TypeUint returns a function that returns true if the error returned by the argument function is nil.
 func TypeUint(v Uint) Bool {
 	return TrimBool(&typUint{
 		E:           v,
@@ -204,7 +204,7 @@ func init() {
 	Register("type", TypeBool)
 }
 
-//TypeBool returns a function that returns true if the error returned by the argument function is nil.
+// TypeBool returns a function that returns true if the error returned by the argument function is nil.
 func TypeBool(v Bool) Bool {
 	return TrimBool(&typBool{
 		E:           v,
@@ -256,7 +256,7 @@ func init() {
 	Register("type", TypeString)
 }
 
-//TypeString returns a function that returns true if the error returned by the argument function is nil.
+// TypeString returns a function that returns true if the error returned by the argument function is nil.
 func TypeString(v String) Bool {
 	return TrimBool(&typString{
 		E:           v,
@@ -308,7 +308,7 @@ func init() {
 	Register("type", TypeBytes)
 }
 
-//TypeBytes returns a function that returns true if the error returned by the argument function is nil.
+// TypeBytes returns a function that returns true if the error returned by the argument function is nil.
 func TypeBytes(v Bytes) Bool {
 	return TrimBool(&typBytes{
 		E:           v,
