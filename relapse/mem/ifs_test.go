@@ -15,6 +15,7 @@
 package mem
 
 import (
+	"reflect"
 	"testing"
 
 	"github.com/katydid/validator-go/parser"
@@ -47,7 +48,7 @@ func TestIfsOneTrue(t *testing.T) {
 		t.Fatal(err)
 	}
 	wants := []*intern.Pattern{zany}
-	if !deriveEquals(gots, wants) {
+	if !reflect.DeepEqual(gots, wants) {
 		t.Fatalf("want %#v got %#v", wants, gots)
 	}
 }
@@ -60,7 +61,7 @@ func TestIfsOneFalse(t *testing.T) {
 		t.Fatal(err)
 	}
 	wants := []*intern.Pattern{notzany}
-	if !deriveEquals(gots, wants) {
+	if !reflect.DeepEqual(gots, wants) {
 		t.Fatalf("want %#v got %#v", wants, gots)
 	}
 }
@@ -73,7 +74,7 @@ func TestIfsTwoTrues(t *testing.T) {
 		t.Fatal(err)
 	}
 	wants := []*intern.Pattern{zany, zany}
-	if !deriveEquals(gots, wants) {
+	if !reflect.DeepEqual(gots, wants) {
 		t.Fatalf("want %#v got %#v", wants, gots)
 	}
 }
@@ -86,7 +87,7 @@ func TestIfs10Trues(t *testing.T) {
 		t.Fatal(err)
 	}
 	wants := []*intern.Pattern{zany, zany, zany, zany, zany, zany, zany, zany, zany, zany}
-	if !deriveEquals(gots, wants) {
+	if !reflect.DeepEqual(gots, wants) {
 		t.Fatalf("want %#v got %#v", wants, gots)
 	}
 }
@@ -100,7 +101,7 @@ func TestIfs10Mixed(t *testing.T) {
 		t.Fatal(err)
 	}
 	wants := []*intern.Pattern{zany, notzany, zany, notzany, zany, notzany, zany, notzany, notzany, zany}
-	if !deriveEquals(gots, wants) {
+	if !reflect.DeepEqual(gots, wants) {
 		t.Fatalf("want %#v got %#v", wants, gots)
 	}
 }
@@ -114,7 +115,7 @@ func TestIfsOneStringVar(t *testing.T) {
 		t.Fatal(err)
 	}
 	wants := []*intern.Pattern{empty}
-	if !deriveEquals(gots, wants) {
+	if !reflect.DeepEqual(gots, wants) {
 		t.Fatalf("want %#v got %#v", wants, gots)
 	}
 }
@@ -132,7 +133,7 @@ func TestIfsABC(t *testing.T) {
 		t.Fatal(err)
 	}
 	wants := []*intern.Pattern{empty, empty, empty, zany, empty, zany, empty}
-	if !deriveEquals(gots, wants) {
+	if !reflect.DeepEqual(gots, wants) {
 		t.Fatalf("want %#v got %#v", wants, gots)
 	}
 }
@@ -150,7 +151,7 @@ func TestIfsContainsABC(t *testing.T) {
 		t.Fatal(err)
 	}
 	wants := []*intern.Pattern{empty, empty, empty, zany, empty, zany, empty}
-	if !deriveEquals(gots, wants) {
+	if !reflect.DeepEqual(gots, wants) {
 		t.Fatalf("want %#v got %#v", wants, gots)
 	}
 }

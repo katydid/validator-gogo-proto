@@ -15,6 +15,7 @@
 package sets
 
 import (
+	"reflect"
 	"testing"
 
 	"github.com/katydid/validator-go/relapse/ast"
@@ -27,7 +28,7 @@ func TestZip0(t *testing.T) {
 		t.Errorf("wanted zero in my zipped set, but got %d", len(zips))
 	}
 	got := Unzip(zips, zipi)
-	if !deriveEquals(want, got) {
+	if !reflect.DeepEqual(want, got) {
 		t.Fatalf("want %s got %s", want, got)
 	}
 }
@@ -39,7 +40,7 @@ func TestZipZAny(t *testing.T) {
 		t.Errorf("wanted zero in my zipped set, but got %d", len(zips))
 	}
 	got := Unzip(zips, zipi)
-	if !deriveEquals(want, got) {
+	if !reflect.DeepEqual(want, got) {
 		t.Fatalf("want %s got %s", want, got)
 	}
 }
@@ -51,7 +52,7 @@ func TestZipNotZAny(t *testing.T) {
 		t.Errorf("wanted zero in my zipped set, but got %d", len(zips))
 	}
 	got := Unzip(zips, zipi)
-	if !deriveEquals(want, got) {
+	if !reflect.DeepEqual(want, got) {
 		t.Fatalf("want %s got %s", want, got)
 	}
 }
@@ -63,7 +64,7 @@ func TestZipNotAndZAny(t *testing.T) {
 		t.Errorf("wanted zero in my zipped set, but got %d", len(zips))
 	}
 	got := Unzip(zips, zipi)
-	if !deriveEquals(want, got) {
+	if !reflect.DeepEqual(want, got) {
 		t.Fatalf("want %s got %s", want, got)
 	}
 }
@@ -76,7 +77,7 @@ func TestZipA(t *testing.T) {
 		t.Errorf("wanted one in my zipped set, but got %d", len(zips))
 	}
 	got := Unzip(zips, zipi)
-	if !deriveEquals(want, got) {
+	if !reflect.DeepEqual(want, got) {
 		t.Fatalf("want %s got %s", want, got)
 	}
 }
@@ -90,7 +91,7 @@ func TestZipAB(t *testing.T) {
 		t.Errorf("wanted two in my zipped set, but got %d", len(zips))
 	}
 	got := Unzip(zips, zipi)
-	if !deriveEquals(want, got) {
+	if !reflect.DeepEqual(want, got) {
 		t.Fatalf("want %s got %s", want, got)
 	}
 }
@@ -104,7 +105,7 @@ func TestZipABNotAndZAny(t *testing.T) {
 		t.Errorf("wanted two in my zipped set, but got %d", len(zips))
 	}
 	got := Unzip(zips, zipi)
-	if !deriveEquals(want, got) {
+	if !reflect.DeepEqual(want, got) {
 		t.Fatalf("want %s got %s", want, got)
 	}
 }
@@ -117,7 +118,7 @@ func TestZipANoZip(t *testing.T) {
 		t.Errorf("wanted one in my zipped set, but got %d", len(zips))
 	}
 	got := Unzip(zips, zipi)
-	if !deriveEquals(want, got) {
+	if !reflect.DeepEqual(want, got) {
 		t.Fatalf("want %s got %s", want, got)
 	}
 }
@@ -131,7 +132,7 @@ func TestZipABNoZip(t *testing.T) {
 		t.Errorf("wanted two in my zipped set, but got %d", len(zips))
 	}
 	got := Unzip(zips, zipi)
-	if !deriveEquals(want, got) {
+	if !reflect.DeepEqual(want, got) {
 		t.Fatalf("want %s got %s", want, got)
 	}
 }
@@ -146,7 +147,7 @@ func TestZipABCNoZip(t *testing.T) {
 		t.Errorf("wanted three in my zipped set, but got %d", len(zips))
 	}
 	got := Unzip(zips, zipi)
-	if !deriveEquals(want, got) {
+	if !reflect.DeepEqual(want, got) {
 		t.Fatalf("want %s got %s", want, got)
 	}
 }

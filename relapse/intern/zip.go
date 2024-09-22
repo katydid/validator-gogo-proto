@@ -26,11 +26,11 @@ var (
 )
 
 func removeAllNotZAny(ps []*Pattern) []*Pattern {
-	return deriveFilter(notEmptySet, ps)
+	return filter(notEmptySet, ps)
 }
 
 func removeAllZAny(ps []*Pattern) []*Pattern {
-	return deriveFilter(func(p *Pattern) bool {
+	return filter(func(p *Pattern) bool {
 		return p.Type != ZAny
 	}, ps)
 }

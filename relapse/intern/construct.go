@@ -135,7 +135,7 @@ func (c *construct) NewPattern(this *ast.Pattern) (*Pattern, error) {
 	}
 	if this.Concat != nil {
 		concats := getConcats(this)
-		ps, err := deriveTraverse(c.NewPattern, concats)
+		ps, err := traverse(c.NewPattern, concats)
 		if err != nil {
 			return nil, err
 		}
@@ -143,7 +143,7 @@ func (c *construct) NewPattern(this *ast.Pattern) (*Pattern, error) {
 	}
 	if this.Or != nil {
 		ors := getOrs(this)
-		ps, err := deriveTraverse(c.NewPattern, ors)
+		ps, err := traverse(c.NewPattern, ors)
 		if err != nil {
 			return nil, err
 		}
@@ -151,7 +151,7 @@ func (c *construct) NewPattern(this *ast.Pattern) (*Pattern, error) {
 	}
 	if this.And != nil {
 		ands := getAnds(this)
-		ps, err := deriveTraverse(c.NewPattern, ands)
+		ps, err := traverse(c.NewPattern, ands)
 		if err != nil {
 			return nil, err
 		}
@@ -193,7 +193,7 @@ func (c *construct) NewPattern(this *ast.Pattern) (*Pattern, error) {
 	}
 	if this.Interleave != nil {
 		interleaves := getInterleaves(this)
-		ps, err := deriveTraverse(c.NewPattern, interleaves)
+		ps, err := traverse(c.NewPattern, interleaves)
 		if err != nil {
 			return nil, err
 		}
@@ -313,7 +313,7 @@ func notEmptySet(p *Pattern) bool {
 }
 
 func removeNotZAnyExceptOne(ps []*Pattern) []*Pattern {
-	pps := deriveFilter(notEmptySet, ps)
+	pps := filter(notEmptySet, ps)
 	if len(pps) == 0 {
 		return ps[:1]
 	}
@@ -325,7 +325,7 @@ func notEmpty(p *Pattern) bool {
 }
 
 func removeEmptyExceptOne(ps []*Pattern) []*Pattern {
-	pps := deriveFilter(notEmpty, ps)
+	pps := filter(notEmpty, ps)
 	if len(pps) == 0 {
 		return ps[:1]
 	}
@@ -333,7 +333,7 @@ func removeEmptyExceptOne(ps []*Pattern) []*Pattern {
 }
 
 func removeZAnyExceptOne(ps []*Pattern) []*Pattern {
-	pps := deriveFilter(func(p *Pattern) bool {
+	pps := filter(func(p *Pattern) bool {
 		return p.Type != ZAny
 	}, ps)
 	if len(pps) == 0 {
@@ -363,11 +363,11 @@ func (c *construct) MergeOr(l, r *Pattern) (*Pattern, error) {
 }
 
 func (c *construct) NewOr(ps []*Pattern) (*Pattern, error) {
-	if deriveAny(isZAny, ps) {
+	if isAny(isZAny, ps) {
 		return c.NewZAny(), nil
 	}
 	ps = removeNotZAnyExceptOne(ps)
-	if deriveAll(isNullable, ps) {
+	if areAll(isNullable, ps) {
 		ps = removeEmptyExceptOne(ps)
 	}
 	ps = orderedSet(ps)
@@ -466,7 +466,7 @@ func (c *construct) mergeNodesOr(ps []*Pattern) ([]*Pattern, error) {
 }
 
 func (c *construct) NewConcat(ps []*Pattern) (*Pattern, error) {
-	if deriveAny(isNotZAny, ps) {
+	if isAny(isNotZAny, ps) {
 		return c.NewNotZAny(), nil
 	}
 	ps = removeEmptyExceptOne(ps)
@@ -504,12 +504,12 @@ func (c *construct) MergeAnd(l, r *Pattern) (*Pattern, error) {
 }
 
 func (c *construct) NewAnd(ps []*Pattern) (*Pattern, error) {
-	if deriveAny(isNotZAny, ps) {
+	if isAny(isNotZAny, ps) {
 		return c.NewNotZAny(), nil
 	}
 	ps = removeZAnyExceptOne(ps)
-	if deriveAny(isEmpty, ps) {
-		if deriveAll(isNullable, ps) {
+	if isAny(isEmpty, ps) {
+		if areAll(isNullable, ps) {
 			return c.NewEmpty(), nil
 		}
 		return c.NewNotZAny(), nil
@@ -639,7 +639,7 @@ func (c *construct) NewOptional(p *Pattern) (*Pattern, error) {
 }
 
 func (c *construct) NewInterleave(ps []*Pattern) (*Pattern, error) {
-	if deriveAny(isNotZAny, ps) {
+	if isAny(isNotZAny, ps) {
 		return c.NewNotZAny(), nil
 	}
 	ps = removeEmptyExceptOne(ps)

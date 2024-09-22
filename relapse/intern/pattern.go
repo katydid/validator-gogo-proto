@@ -86,19 +86,19 @@ func newASTPattern(p *Pattern) (*ast.Pattern, error) {
 			return ast.NewTreeNode(name, p), nil
 		}
 	case Concat:
-		ps, err := deriveTraverseAst(newASTPattern, p.Patterns)
+		ps, err := traverse(newASTPattern, p.Patterns)
 		if err != nil {
 			return nil, err
 		}
 		return ast.NewConcat(ps...), nil
 	case Or:
-		ps, err := deriveTraverseAst(newASTPattern, p.Patterns)
+		ps, err := traverse(newASTPattern, p.Patterns)
 		if err != nil {
 			return nil, err
 		}
 		return ast.NewOr(ps...), nil
 	case And:
-		ps, err := deriveTraverseAst(newASTPattern, p.Patterns)
+		ps, err := traverse(newASTPattern, p.Patterns)
 		if err != nil {
 			return nil, err
 		}
@@ -132,7 +132,7 @@ func newASTPattern(p *Pattern) (*ast.Pattern, error) {
 		}
 		return ast.NewOptional(pp), nil
 	case Interleave:
-		ps, err := deriveTraverseAst(newASTPattern, p.Patterns)
+		ps, err := traverse(newASTPattern, p.Patterns)
 		if err != nil {
 			return nil, err
 		}
