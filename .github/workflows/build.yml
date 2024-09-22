@@ -14,10 +14,10 @@ jobs:
         go-version: 1.19
     - name: Fetch dependencies
       run: go mod download -x
-    - name: Setup protoc
-      run: bash ${GITHUB_WORKSPACE}/install-protoc.sh
     - name: Install tools
       run: go install -x github.com/goccmack/gocc github.com/awalterschulze/goderive github.com/gogo/protobuf/protoc-gen-gogo
+    - name: Setup protoc
+      run: bash ${GITHUB_WORKSPACE}/install-protoc.sh
     - name: Generate
       run: make regenerate
     - name: Build
