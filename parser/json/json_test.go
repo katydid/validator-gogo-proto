@@ -16,9 +16,10 @@ package json_test
 
 import (
 	"encoding/json"
-	"github.com/katydid/katydid/parser/debug"
-	sjson "github.com/katydid/katydid/parser/json"
 	"testing"
+
+	"github.com/katydid/validator-go/parser/debug"
+	sjson "github.com/katydid/validator-go/parser/json"
 )
 
 func TestDebug(t *testing.T) {

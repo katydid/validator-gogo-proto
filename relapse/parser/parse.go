@@ -16,8 +16,9 @@ package parser
 
 import (
 	"fmt"
-	"github.com/katydid/katydid/relapse/ast"
-	"github.com/katydid/katydid/relapse/lexer"
+
+	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-go/relapse/lexer"
 )
 
 type errWrongType struct {
@@ -29,7 +30,7 @@ func (this *errWrongType) Error() string {
 	return fmt.Sprintf("relapse/parser: expected %s, but got %#v", this.typ, this.res)
 }
 
-//ParseGrammar parses a relapse grammar and returns an abstract syntax tree.
+// ParseGrammar parses a relapse grammar and returns an abstract syntax tree.
 func (this *Parser) ParseGrammar(s string) (*ast.Grammar, error) {
 	scanner := lexer.NewLexer([]byte(s))
 	g, err := this.Parse(scanner)
@@ -43,13 +44,13 @@ func (this *Parser) ParseGrammar(s string) (*ast.Grammar, error) {
 	return gram, nil
 }
 
-//ParseGrammar parses a relapse grammar and returns an abstract syntax tree.
+// ParseGrammar parses a relapse grammar and returns an abstract syntax tree.
 func ParseGrammar(s string) (*ast.Grammar, error) {
 	p := NewParser()
 	return p.ParseGrammar(s)
 }
 
-//ParseExpr returns a parsed expression or error, given a string.
+// ParseExpr returns a parsed expression or error, given a string.
 func (this *Parser) ParseExpr(s string) (res *ast.Expr, err error) {
 	scanner := lexer.NewLexer([]byte(s))
 	g, err := this.Parse(scanner)
@@ -69,7 +70,7 @@ func (this *Parser) ParseExpr(s string) (res *ast.Expr, err error) {
 	return gram.GetTopPattern().GetLeafNode().GetExpr(), nil
 }
 
-//ParseExpr returns a parsed expression or error, given a string.
+// ParseExpr returns a parsed expression or error, given a string.
 func ParseExpr(s string) (*ast.Expr, error) {
 	p := NewParser()
 	return p.ParseExpr(s)

@@ -16,18 +16,19 @@ package interp
 
 import (
 	"fmt"
-	"github.com/katydid/katydid/relapse/ast"
+
+	"github.com/katydid/validator-go/relapse/ast"
 )
 
-//HasRecursion returns whether the grammar contains any references that does not have a TreeNode pattern in between.
-//For example:
+// HasRecursion returns whether the grammar contains any references that does not have a TreeNode pattern in between.
+// For example:
 //
-//  #main = @main
-//  #main = (A:* | @main)
+//	#main = @main
+//	#main = (A:* | @main)
 //
-//Recursion can still be used when a TreeNode pattern is placed between references, for example:
+// Recursion can still be used when a TreeNode pattern is placed between references, for example:
 //
-//  #main = (A:@main | <empty>)
+//	#main = (A:@main | <empty>)
 func HasRecursion(g *ast.Grammar) bool {
 	refs := ast.NewRefLookup(g)
 	for name := range refs {

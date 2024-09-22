@@ -3,7 +3,7 @@
 package mem
 
 import (
-	intern "github.com/katydid/katydid/relapse/intern"
+	intern "github.com/katydid/validator-go/relapse/intern"
 )
 
 // deriveEquals returns whether this and that are equal.

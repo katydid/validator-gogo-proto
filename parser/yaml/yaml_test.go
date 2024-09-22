@@ -17,7 +17,7 @@ package yaml
 import (
 	"testing"
 
-	"github.com/katydid/katydid/parser/debug"
+	"github.com/katydid/validator-go/parser/debug"
 )
 
 func testYaml(t *testing.T, s string, output debug.Nodes) {
@@ -31,7 +31,7 @@ func testYaml(t *testing.T, s string, output debug.Nodes) {
 	}
 }
 
-//debugInput is a serialized YAML equivalent of the sample Debug struct in debug.Input
+// debugInput is a serialized YAML equivalent of the sample Debug struct in debug.Input
 var debugInput = `
 		A: 1
 		B:
@@ -50,8 +50,8 @@ var debugInput = `
 		F:
 			- 5`
 
-//A simplified version of debug.Output which excludes complex array objects, a known limitation
-//of the current YAML parser implementation
+// A simplified version of debug.Output which excludes complex array objects, a known limitation
+// of the current YAML parser implementation
 var debugOutput = debug.Nodes{
 	debug.Field(`A`, `1`),
 	debug.Nested(`B`,

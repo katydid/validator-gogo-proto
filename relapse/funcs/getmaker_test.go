@@ -17,7 +17,7 @@ package funcs
 import (
 	"testing"
 
-	"github.com/katydid/katydid/relapse/types"
+	"github.com/katydid/validator-go/relapse/types"
 )
 
 func testGetMaker(t *testing.T, name string, params ...types.Type) {

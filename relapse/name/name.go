@@ -12,20 +12,20 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-//Package name has functions for a parsed name expression which include compilation and evaluation.
+// Package name has functions for a parsed name expression which include compilation and evaluation.
 package name
 
 import (
 	"fmt"
 
-	"github.com/katydid/katydid/parser"
-	"github.com/katydid/katydid/relapse/ast"
-	"github.com/katydid/katydid/relapse/compose"
-	"github.com/katydid/katydid/relapse/funcs"
-	relapseparser "github.com/katydid/katydid/relapse/parser"
+	"github.com/katydid/validator-go/parser"
+	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-go/relapse/compose"
+	"github.com/katydid/validator-go/relapse/funcs"
+	relapseparser "github.com/katydid/validator-go/relapse/parser"
 )
 
-//EvalName evaluates a name expression given a name value.
+// EvalName evaluates a name expression given a name value.
 func EvalName(nameExpr *ast.NameExpr, name parser.Value) bool {
 	f := NameToFunc(nameExpr)
 	b, err := compose.NewBoolFunc(f)
@@ -39,7 +39,7 @@ func EvalName(nameExpr *ast.NameExpr, name parser.Value) bool {
 	return v
 }
 
-//NameToFunc compiles a parsed name expression into a function.
+// NameToFunc compiles a parsed name expression into a function.
 func NameToFunc(n *ast.NameExpr) funcs.Bool {
 	typ := n.GetValue()
 	switch v := typ.(type) {
@@ -68,7 +68,7 @@ func NameToFunc(n *ast.NameExpr) funcs.Bool {
 	panic(fmt.Sprintf("unknown name expr typ %T", typ))
 }
 
-//FuncToName decompiles a function back into a name expression, if possible.
+// FuncToName decompiles a function back into a name expression, if possible.
 func FuncToName(f funcs.Bool) (*ast.NameExpr, error) {
 	exprStr := funcs.Sprint(f)
 	expr, err := relapseparser.NewParser().ParseExpr(exprStr)

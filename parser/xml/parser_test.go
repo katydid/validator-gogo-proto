@@ -18,7 +18,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/katydid/katydid/parser/debug"
+	"github.com/katydid/validator-go/parser/debug"
 )
 
 func testXML(t *testing.T, s string) {

@@ -19,7 +19,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/katydid/katydid/relapse/types"
+	"github.com/katydid/validator-go/relapse/types"
 )
 
 var errTyp = reflect.TypeOf((*error)(nil)).Elem()

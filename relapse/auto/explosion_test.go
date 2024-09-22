@@ -15,9 +15,10 @@
 package auto
 
 import (
-	"github.com/katydid/katydid/relapse/interp"
-	"github.com/katydid/katydid/relapse/parser"
 	"testing"
+
+	"github.com/katydid/validator-go/relapse/interp"
+	"github.com/katydid/validator-go/relapse/parser"
 )
 
 func TestExplosionAndSameTree(t *testing.T) {

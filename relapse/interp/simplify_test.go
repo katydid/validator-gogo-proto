@@ -17,9 +17,9 @@ package interp_test
 import (
 	"testing"
 
-	"github.com/katydid/katydid/relapse/ast"
-	"github.com/katydid/katydid/relapse/combinator"
-	. "github.com/katydid/katydid/relapse/interp"
+	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-go/relapse/combinator"
+	. "github.com/katydid/validator-go/relapse/interp"
 )
 
 func TestSimplify1(t *testing.T) {

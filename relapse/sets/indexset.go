@@ -15,11 +15,11 @@
 package sets
 
 import (
-	"github.com/katydid/katydid/relapse/ast"
+	"github.com/katydid/validator-go/relapse/ast"
 )
 
-//Ints represents an indexed list of list of integers.
-//It reverse maps a list of ints into a single int.
+// Ints represents an indexed list of list of integers.
+// It reverse maps a list of ints into a single int.
 type Ints [][]int
 
 func NewInts() Ints {
@@ -53,8 +53,8 @@ func (this *Ints) Add(is []int) int {
 	return len(*this) - 1
 }
 
-//Patterns represents an indexed list of list of Patterns.
-//It reverse maps a list of Patterns into a single int.
+// Patterns represents an indexed list of list of Patterns.
+// It reverse maps a list of Patterns into a single int.
 type Patterns [][]*ast.Pattern
 
 func NewPatterns() Patterns {
@@ -80,8 +80,8 @@ func (this *Patterns) Add(patterns []*ast.Pattern) int {
 	return len(*this) - 1
 }
 
-//BitsSet represents an indexed list of Bits.
-//It reverse maps a Bits into a single int.
+// BitsSet represents an indexed list of Bits.
+// It reverse maps a Bits into a single int.
 type BitsSet []Bits
 
 func NewBitsSet() BitsSet {
@@ -111,8 +111,8 @@ type Pair struct {
 	Second int
 }
 
-//Pairs represents an indexed list of Pair pairs.
-//It reverse maps a list of Pairs into a single int.
+// Pairs represents an indexed list of Pair pairs.
+// It reverse maps a list of Pairs into a single int.
 type Pairs []Pair
 
 func NewPairs() Pairs {

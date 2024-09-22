@@ -12,13 +12,13 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-//Command debug-gen generates some of the code in the debug package.
+// Command debug-gen generates some of the code in the debug package.
 package main
 
 import (
 	"strings"
 
-	"github.com/katydid/katydid/gen"
+	"github.com/katydid/validator-go/gen"
 )
 
 type valuer struct {
@@ -60,5 +60,5 @@ func main() {
 		&valuer{"Bool", "bool", "false"},
 		&valuer{"String", "string", `""`},
 		&valuer{"Bytes", "[]byte", "nil"},
-	}, `"github.com/katydid/katydid/parser"`)
+	}, `"github.com/katydid/validator-go/parser"`)
 }

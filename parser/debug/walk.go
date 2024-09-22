@@ -16,11 +16,12 @@ package debug
 
 import (
 	"fmt"
-	"github.com/katydid/katydid/parser"
 	"io"
 	"math/rand"
 	"strings"
 	"time"
+
+	"github.com/katydid/validator-go/parser"
 )
 
 func getValue(p parser.Interface) interface{} {
@@ -53,14 +54,14 @@ func getValue(p parser.Interface) interface{} {
 	return nil
 }
 
-//Node is a type that represents a node in a tree.
-//It has a label an children nodes.
+// Node is a type that represents a node in a tree.
+// It has a label an children nodes.
 type Node struct {
 	Label    string
 	Children Nodes
 }
 
-//String returns a string representation of Node.
+// String returns a string representation of Node.
 func (this Node) String() string {
 	if len(this.Children) == 0 {
 		return this.Label
@@ -68,7 +69,7 @@ func (this Node) String() string {
 	return this.Label + ":" + this.Children.String()
 }
 
-//Equal returns whether two Nodes are the same.
+// Equal returns whether two Nodes are the same.
 func (this Node) Equal(that Node) bool {
 	if this.Label != that.Label {
 		return false
@@ -79,10 +80,10 @@ func (this Node) Equal(that Node) bool {
 	return true
 }
 
-//Nodes is a list of Node.
+// Nodes is a list of Node.
 type Nodes []Node
 
-//String returns a string representation of Nodes.
+// String returns a string representation of Nodes.
 func (this Nodes) String() string {
 	ss := make([]string, len(this))
 	for i := range this {
@@ -91,7 +92,7 @@ func (this Nodes) String() string {
 	return "{" + strings.Join(ss, ",") + "}"
 }
 
-//Equal returns whether two Node lists are equal.
+// Equal returns whether two Node lists are equal.
 func (this Nodes) Equal(that Nodes) bool {
 	if len(this) != len(that) {
 		return false
@@ -104,7 +105,7 @@ func (this Nodes) Equal(that Nodes) bool {
 	return true
 }
 
-//Walk walks through the whole parser in a top down manner and records the values into a Nodes structute.
+// Walk walks through the whole parser in a top down manner and records the values into a Nodes structute.
 func Walk(p parser.Interface) Nodes {
 	a := make(Nodes, 0)
 	for {
@@ -129,21 +130,23 @@ func Walk(p parser.Interface) Nodes {
 	return a
 }
 
-//NewRand returns a random integer generator, that can be used with RandomWalk.
-//Its seed is the current time.
+// NewRand returns a random integer generator, that can be used with RandomWalk.
+// Its seed is the current time.
 func NewRand() Rand {
 	return rand.New(rand.NewSource(time.Now().UnixNano()))
 }
 
-//Rand is a subset of the interface that is implemented by math/rand representing only the methods used by the RandomWalk function.
+// Rand is a subset of the interface that is implemented by math/rand representing only the methods used by the RandomWalk function.
 type Rand interface {
 	Intn(n int) int
 }
 
-//RandomWalk does a random walk of the parser, given two probabilities.
-//  next is passed to r.Intn and when a zero value is returned the Next method on the parser is called.
-//  down is passed to r.Intn and when a non zero value is returned the Down method on the parser is called.
-//RandomWalk is great for testing that the implemented parser can handle random skipping of parts of the tree.
+// RandomWalk does a random walk of the parser, given two probabilities.
+//
+//	next is passed to r.Intn and when a zero value is returned the Next method on the parser is called.
+//	down is passed to r.Intn and when a non zero value is returned the Down method on the parser is called.
+//
+// RandomWalk is great for testing that the implemented parser can handle random skipping of parts of the tree.
 func RandomWalk(p parser.Interface, r Rand, next, down int) Nodes {
 	a := make(Nodes, 0)
 	for {

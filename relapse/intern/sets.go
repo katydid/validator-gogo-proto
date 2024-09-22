@@ -15,11 +15,11 @@
 package intern
 
 import (
-	"github.com/katydid/katydid/relapse/sets"
+	"github.com/katydid/validator-go/relapse/sets"
 )
 
-//SetOfPatterns represents an indexed list of list of Patterns.
-//It reverse maps a list of Patterns into a single int.
+// SetOfPatterns represents an indexed list of list of Patterns.
+// It reverse maps a list of Patterns into a single int.
 type SetOfPatterns struct {
 	List            []*Patterns
 	Hashes          map[uint64][]int

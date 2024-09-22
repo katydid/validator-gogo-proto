@@ -20,12 +20,12 @@ import (
 	"strings"
 	"testing"
 
-	reflectparser "github.com/katydid/katydid/parser/reflect"
-	"github.com/katydid/katydid/relapse/ast"
-	. "github.com/katydid/katydid/relapse/combinator"
-	"github.com/katydid/katydid/relapse/funcs"
-	"github.com/katydid/katydid/relapse/mem"
-	relapseparser "github.com/katydid/katydid/relapse/parser"
+	reflectparser "github.com/katydid/validator-go/parser/reflect"
+	"github.com/katydid/validator-go/relapse/ast"
+	. "github.com/katydid/validator-go/relapse/combinator"
+	"github.com/katydid/validator-go/relapse/funcs"
+	"github.com/katydid/validator-go/relapse/mem"
+	relapseparser "github.com/katydid/validator-go/relapse/parser"
 )
 
 func NewInjectable() *injectableInt {

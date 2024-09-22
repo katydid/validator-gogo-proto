@@ -12,13 +12,13 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-//Command funcs-gen generates some of the code in the funcs package.
+// Command funcs-gen generates some of the code in the funcs package.
 package main
 
 import (
 	"strings"
 
-	"github.com/katydid/katydid/gen"
+	"github.com/katydid/validator-go/gen"
 )
 
 const compareStr = `
@@ -93,8 +93,8 @@ func init() {
 // {{.CType}}{{.CName}} returns a new {{.Comment}} function.
 func {{.CType}}{{.CName}}(a, b {{.CType}}) Bool {
 	return TrimBool(&{{.Type}}{{.CName}}{
-		V1: a, 
-		V2: b, 
+		V1: a,
+		V2: b,
 		hash: hashWithId({{.Hash}}, a, b),
 		hasVariable: a.HasVariable() || b.HasVariable(),
 	})
@@ -213,7 +213,7 @@ func NewListOf{{.FuncType}}(v []{{.FuncType}}) {{.CType}} {
 	h := uint64(17)
 	h = 31*h + {{.Hash}}
 	for i := 0; i < len(v); i++ {
-		h = 31*h + v[i].Hash()	
+		h = 31*h + v[i].Hash()
 	}
 	hasVariable := false
 	for _, vv := range v {
@@ -223,7 +223,7 @@ func NewListOf{{.FuncType}}(v []{{.FuncType}}) {{.CType}} {
 		}
 	}
 	return Trim{{.CType}}(&listOf{{.FuncType}}{
-		List: v, 
+		List: v,
 		hash: h,
 		hasVariable: hasVariable,
 	})
@@ -344,7 +344,7 @@ func init() {
 //Print{{.Name}} returns a function that prints out the value of the argument function and returns its value.
 func Print{{.Name}}(e {{.Name}}) {{.Name}} {
 	return &print{{.Name}}{
-		E: e, 
+		E: e,
 		hash: hashWithId({{.Hash}}, e),
 	}
 }
@@ -409,7 +409,7 @@ func init() {
 //Len{{.}} returns a function that returns the length of a list of type {{.}}
 func Len{{.}}(e {{.}}) Int {
 	return TrimInt(&len{{.}}{
-		E: e, 
+		E: e,
 		hash: Hash("length", e),
 		hasVariable: e.HasVariable(),
 	})
@@ -728,7 +728,7 @@ func init() {
 //Type{{.Name}} returns a function that returns true if the error returned by the argument function is nil.
 func Type{{.Name}}(v {{.Name}}) Bool {
 	return TrimBool(&typ{{.Name}}{
-		E: v, 
+		E: v,
 		hash: hashWithId({{.Hash}}, v),
 		hasVariable: v.HasVariable(),
 	})
@@ -944,7 +944,7 @@ func main() {
 		&varer{"Bool", "bool", "bool", "false"},
 		&varer{"String", "string", "string", `""`},
 		&varer{"Bytes", "[]byte", "[]byte", "nil"},
-	}, `"strings"`, `"github.com/katydid/katydid/parser"`)
+	}, `"strings"`, `"github.com/katydid/validator-go/parser"`)
 	gen(typStr, "type.gen.go", []interface{}{
 		&typer{"Double"},
 		&typer{"Int"},

@@ -15,8 +15,8 @@
 package intern
 
 import (
-	"github.com/katydid/katydid/relapse/compose"
-	"github.com/katydid/katydid/relapse/funcs"
+	"github.com/katydid/validator-go/relapse/compose"
+	"github.com/katydid/validator-go/relapse/funcs"
 )
 
 func (c *construct) SetContext(context *funcs.Context) {

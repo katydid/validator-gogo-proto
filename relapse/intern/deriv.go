@@ -18,14 +18,14 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/katydid/katydid/parser"
-	"github.com/katydid/katydid/relapse/ast"
+	"github.com/katydid/validator-go/parser"
+	"github.com/katydid/validator-go/relapse/ast"
 )
 
-//Interpret interprets the grammar given the parser and returns whether the parser is valid given the grammar.
-//Interpret uses derivatives and simplification to recusively derive the resulting grammar.
-//This resulting grammar's nullability then represents the result of the function.
-//This implementation does not handle immediate recursion, see the HasRecursion function.
+// Interpret interprets the grammar given the parser and returns whether the parser is valid given the grammar.
+// Interpret uses derivatives and simplification to recusively derive the resulting grammar.
+// This resulting grammar's nullability then represents the result of the function.
+// This implementation does not handle immediate recursion, see the HasRecursion function.
 func Interpret(g *ast.Grammar, record bool, parser parser.Interface) (bool, error) {
 	c := NewConstructor()
 	if record {

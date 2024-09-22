@@ -17,7 +17,7 @@ package parser_test
 import (
 	"testing"
 
-	"github.com/katydid/katydid/relapse/parser"
+	"github.com/katydid/validator-go/relapse/parser"
 )
 
 func TestParse(t *testing.T) {
@@ -29,7 +29,7 @@ func TestParse(t *testing.T) {
 		`,
 		`@main`,
 		`A [
-			a->eq($string, "123"), 
+			a->eq($string, "123"),
 			b->eq($string, "456")
 		]`,
 		`A [
@@ -76,25 +76,25 @@ func TestParse(t *testing.T) {
 			*,
 			a -> eq($string, "aa") ,
 			*,
-			( 
-			  b -> contains($string, "bb") 
+			(
+			  b -> contains($string, "bb")
 			  | (
 			  	c -> contains($string, "cc")  &
 			  	c -> contains($string, "see")  &
 			  	(
 			  		c -> contains($string, "sea")  |
-			  		c -> contains($string, "ocean") 
+			  		c -> contains($string, "ocean")
 			  	)
 			  )
-			  | d -> contains($string, "dd") 
-			  | d -> contains($string, "dd") 
-			  | d -> contains($string, "dd") 
+			  | d -> contains($string, "dd")
+			  | d -> contains($string, "dd")
+			  | d -> contains($string, "dd")
 			)
 		]`,
 		`_->greaterThanOne(1) `,
 		`[
 			(_ -> eq($int, 1) )*,
-			bla -> any() 
+			bla -> any()
 		]`,
 		`( a|b ) -> eq($int, 1) `,
 		`( a|_|!(b) ) -> eq($int, 1) `,
@@ -124,7 +124,7 @@ func TestParse(t *testing.T) {
 		`(*)?`,
 		`{a:* ; b:*}`,
 		`{
-			a:* ; 
+			a:* ;
 			b:*;
 		}`,
 		`.A.1 == "a"`,

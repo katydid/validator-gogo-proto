@@ -17,10 +17,10 @@ package intern
 import (
 	"fmt"
 
-	"github.com/katydid/katydid/relapse/ast"
-	"github.com/katydid/katydid/relapse/funcs"
-	nameexpr "github.com/katydid/katydid/relapse/name"
-	"github.com/katydid/katydid/relapse/parser"
+	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-go/relapse/funcs"
+	nameexpr "github.com/katydid/validator-go/relapse/name"
+	"github.com/katydid/validator-go/relapse/parser"
 )
 
 type PatternType int

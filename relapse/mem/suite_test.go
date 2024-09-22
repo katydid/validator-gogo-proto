@@ -17,11 +17,11 @@ package mem_test
 import (
 	"testing"
 
-	"github.com/katydid/katydid/parser"
-	"github.com/katydid/katydid/relapse/ast"
-	"github.com/katydid/katydid/relapse/interp"
-	"github.com/katydid/katydid/relapse/mem"
-	"github.com/katydid/katydid/relapse/testsuite"
+	"github.com/katydid/validator-go/parser"
+	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-go/relapse/interp"
+	"github.com/katydid/validator-go/relapse/mem"
+	"github.com/katydid/validator-go/relapse/testsuite"
 )
 
 func TestSuite(t *testing.T) {

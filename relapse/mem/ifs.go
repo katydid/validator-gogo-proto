@@ -18,10 +18,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/katydid/katydid/parser"
-	"github.com/katydid/katydid/relapse/compose"
-	"github.com/katydid/katydid/relapse/funcs"
-	"github.com/katydid/katydid/relapse/intern"
+	"github.com/katydid/validator-go/parser"
+	"github.com/katydid/validator-go/relapse/compose"
+	"github.com/katydid/validator-go/relapse/funcs"
+	"github.com/katydid/validator-go/relapse/intern"
 )
 
 type ifExprs struct {

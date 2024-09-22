@@ -12,18 +12,18 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-//Package compose compiles a parsed expression for evaluation.
+// Package compose compiles a parsed expression for evaluation.
 package compose
 
 import (
 	"fmt"
 
-	"github.com/katydid/katydid/relapse/ast"
-	"github.com/katydid/katydid/relapse/funcs"
-	"github.com/katydid/katydid/relapse/types"
+	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-go/relapse/funcs"
+	"github.com/katydid/validator-go/relapse/types"
 )
 
-//Which returns the type that the expression will return.
+// Which returns the type that the expression will return.
 func Which(expr *ast.Expr) (types.Type, error) {
 	if expr.Terminal != nil {
 		term := expr.GetTerminal()
@@ -63,7 +63,7 @@ func Which(expr *ast.Expr) (types.Type, error) {
 	return 0, &errUnknownType{expr}
 }
 
-//GetMaker returns the function maker, given the function name and types of the parameters.
+// GetMaker returns the function maker, given the function name and types of the parameters.
 func GetMaker(fnc *ast.Function) (*funcs.Maker, error) {
 	types := make([]types.Type, 0, len(fnc.GetParams()))
 	for _, p := range fnc.GetParams() {

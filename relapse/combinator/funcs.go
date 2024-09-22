@@ -15,12 +15,12 @@
 package combinator
 
 import (
-	"github.com/katydid/katydid/relapse/ast"
-	"github.com/katydid/katydid/relapse/parser"
-	"github.com/katydid/katydid/relapse/types"
+	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-go/relapse/parser"
+	"github.com/katydid/validator-go/relapse/types"
 )
 
-//Value represents a field value.
+// Value represents a field value.
 func Value(expr *ast.Expr) *ast.Pattern {
 	if expr.Function != nil && len(expr.Function.Params) == 2 {
 		constructor := ast.FunctionNameToBuiltIn(expr.Function.Name)

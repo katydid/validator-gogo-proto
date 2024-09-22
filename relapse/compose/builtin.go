@@ -15,11 +15,11 @@
 package compose
 
 import (
-	"github.com/katydid/katydid/relapse/ast"
-	"github.com/katydid/katydid/relapse/types"
+	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-go/relapse/types"
 )
 
-//ConvertBuiltInIntoFunction converts a BuiltIn Expr into a Function Expr.
+// ConvertBuiltInIntoFunction converts a BuiltIn Expr into a Function Expr.
 func ConvertBuiltInIntoFunction(e *ast.Expr) (*ast.Expr, error) {
 	if e.BuiltIn == nil {
 		return e, nil

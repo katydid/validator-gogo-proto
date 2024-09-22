@@ -17,7 +17,7 @@ package intern
 import (
 	"testing"
 
-	"github.com/katydid/katydid/relapse/sets"
+	"github.com/katydid/validator-go/relapse/sets"
 )
 
 func indexOf(set *SetOfPatterns, ps []*Pattern) int {

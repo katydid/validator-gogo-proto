@@ -12,7 +12,7 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-//Package xml contains a parser for XML.
+// Package xml contains a parser for XML.
 package xml
 
 import (
@@ -23,7 +23,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/katydid/katydid/parser"
+	"github.com/katydid/validator-go/parser"
 )
 
 type xmlParser struct {
@@ -39,7 +39,7 @@ type xmlParser struct {
 	textPrefix string
 }
 
-//XMLParser is an xml parser.
+// XMLParser is an xml parser.
 type XMLParser interface {
 	parser.Interface
 	//Init intialises the parser with a byte buffer containing xml.
@@ -47,7 +47,7 @@ type XMLParser interface {
 	Reset() error
 }
 
-//NewXMLParser returns a new xml parser.
+// NewXMLParser returns a new xml parser.
 func NewXMLParser(options ...Option) XMLParser {
 	x := &xmlParser{}
 	for _, option := range options {
@@ -56,24 +56,24 @@ func NewXMLParser(options ...Option) XMLParser {
 	return x
 }
 
-//Option is used set options when creating a new XMLParser
+// Option is used set options when creating a new XMLParser
 type Option func(x *xmlParser)
 
-//WithAttrPrefix specifies the prefix which will be added to attributes returned by the parser.
+// WithAttrPrefix specifies the prefix which will be added to attributes returned by the parser.
 func WithAttrPrefix(a string) func(x *xmlParser) {
 	return func(x *xmlParser) {
 		x.attrPrefix = a
 	}
 }
 
-//WithElemPrefix specifies the prefix which will be added to elements returned by the parser.
+// WithElemPrefix specifies the prefix which will be added to elements returned by the parser.
 func WithElemPrefix(e string) func(x *xmlParser) {
 	return func(x *xmlParser) {
 		x.elemPrefix = e
 	}
 }
 
-//WithTextPrefix specifies the prefix which will be added to text returned by the parser.
+// WithTextPrefix specifies the prefix which will be added to text returned by the parser.
 func WithTextPrefix(e string) func(x *xmlParser) {
 	return func(x *xmlParser) {
 		x.textPrefix = e

@@ -15,8 +15,9 @@
 package auto
 
 import (
-	"github.com/katydid/katydid/relapse/parser"
 	"testing"
+
+	"github.com/katydid/validator-go/relapse/parser"
 )
 
 func benchCompile(b *testing.B, str string) {
@@ -65,8 +66,8 @@ func BenchmarkCompileAndLarger(b *testing.B) {
 }
 
 var typewriterOrQueryStr = `(.WineMessenger:* | .ShoelaceBeer:* |
-		.PocketRoses: ( 
-			.ScarBusStop == "a" | 
+		.PocketRoses: (
+			.ScarBusStop == "a" |
 			.BadgeShopping > 1 |
 			.DaisySled < 5 |
 			.SubmarineSaw == 0 |
@@ -90,9 +91,9 @@ func BenchmarkCompileOrProtoName(b *testing.B) {
 	}
 }
 
-var typewriterAndQueryStr = `(.WineMessenger:* & .ShoelaceBeer:* & 
-		.PocketRoses: ( 
-			.ScarBusStop == "a" & 
+var typewriterAndQueryStr = `(.WineMessenger:* & .ShoelaceBeer:* &
+		.PocketRoses: (
+			.ScarBusStop == "a" &
 			.BadgeShopping > 1 &
 			.DaisySled < 5 &
 			.SubmarineSaw == 0 &
@@ -116,7 +117,7 @@ func BenchmarkCompileAndProtoName(b *testing.B) {
 	}
 }
 
-var typewriterInterleaveQueryStr = `{WineMessenger:* ; .ShoelaceBeer:* ; 
+var typewriterInterleaveQueryStr = `{WineMessenger:* ; .ShoelaceBeer:* ;
 		PocketRoses: {
 			ScarBusStop == "a" ;
 			BadgeShopping > 1 ;

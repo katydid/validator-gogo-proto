@@ -15,10 +15,10 @@
 package auto
 
 import (
-	"github.com/katydid/katydid/parser"
-	"github.com/katydid/katydid/relapse/ast"
-	"github.com/katydid/katydid/relapse/compose"
-	"github.com/katydid/katydid/relapse/funcs"
+	"github.com/katydid/validator-go/parser"
+	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-go/relapse/compose"
+	"github.com/katydid/validator-go/relapse/funcs"
 )
 
 type ifExprs struct {
@@ -29,8 +29,8 @@ type ifExprs struct {
 	ret      []*ast.Pattern
 }
 
-//compileIfExprs combines several if expressions into one nested if expression with a list of return values.
-//While combining these if expressions, duplicate and impossible (always false) conditions are removed for efficiency.
+// compileIfExprs combines several if expressions into one nested if expression with a list of return values.
+// While combining these if expressions, duplicate and impossible (always false) conditions are removed for efficiency.
 func compileIfExprs(ifs []*ifExpr) *ifExprs {
 	if len(ifs) == 0 {
 		return &ifExprs{
@@ -76,7 +76,7 @@ func (this *ifExprs) eval(label parser.Value) ([]*ast.Pattern, error) {
 	return this.els.eval(label)
 }
 
-//addReturn finds the leafs and appends a return to each.
+// addReturn finds the leafs and appends a return to each.
 func (this *ifExprs) addReturn(ret *ast.Pattern) {
 	if this.ret != nil {
 		this.ret = append(this.ret, ret)

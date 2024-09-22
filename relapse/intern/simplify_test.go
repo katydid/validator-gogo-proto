@@ -17,9 +17,9 @@ package intern_test
 import (
 	"testing"
 
-	"github.com/katydid/katydid/relapse/ast"
-	"github.com/katydid/katydid/relapse/combinator"
-	. "github.com/katydid/katydid/relapse/intern"
+	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-go/relapse/combinator"
+	. "github.com/katydid/validator-go/relapse/intern"
 )
 
 func TestSimplify1(t *testing.T) {

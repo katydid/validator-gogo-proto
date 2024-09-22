@@ -18,9 +18,9 @@ import (
 	"flag"
 	"testing"
 
-	"github.com/katydid/katydid/relapse/ast"
-	"github.com/katydid/katydid/relapse/mem"
-	"github.com/katydid/katydid/relapse/testsuite"
+	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-go/relapse/mem"
+	"github.com/katydid/validator-go/relapse/testsuite"
 )
 
 var bN = flag.Int("b.N", 0, "the number of times the benchmark function's target code must run")

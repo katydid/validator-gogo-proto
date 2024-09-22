@@ -17,7 +17,7 @@ package sets
 import (
 	"testing"
 
-	"github.com/katydid/katydid/relapse/ast"
+	"github.com/katydid/validator-go/relapse/ast"
 )
 
 func TestZip0(t *testing.T) {

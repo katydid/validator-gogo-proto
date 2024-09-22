@@ -19,8 +19,8 @@ import (
 	"reflect"
 	"testing"
 
-	jsonparser "github.com/katydid/katydid/parser/json"
-	reflectparser "github.com/katydid/katydid/parser/reflect"
+	jsonparser "github.com/katydid/validator-go/parser/json"
+	reflectparser "github.com/katydid/validator-go/parser/reflect"
 )
 
 func testTranscode(t *testing.T, input interface{}) {

@@ -17,17 +17,17 @@ package compose
 import (
 	"reflect"
 
-	"github.com/katydid/katydid/parser"
-	"github.com/katydid/katydid/relapse/ast"
-	"github.com/katydid/katydid/relapse/funcs"
+	"github.com/katydid/validator-go/parser"
+	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-go/relapse/funcs"
 )
 
-//Bool is an interface that represents a function, that given a value for a variable returns a boolean or an error.
+// Bool is an interface that represents a function, that given a value for a variable returns a boolean or an error.
 type Bool interface {
 	Eval(parser.Value) (bool, error)
 }
 
-//Setter is an interface that represents a variable in a function of which the value can be set.
+// Setter is an interface that represents a variable in a function of which the value can be set.
 type Setter interface {
 	SetValue(parser.Value)
 }
@@ -43,7 +43,7 @@ var (
 	setContextTyp = reflect.TypeOf((*funcs.SetContext)(nil)).Elem()
 )
 
-//NewBool constructs a boolean function from a parsed expression.
+// NewBool constructs a boolean function from a parsed expression.
 func NewBool(expr *ast.Expr) (funcs.Bool, error) {
 	expr2, err := ConvertBuiltInIntoFunction(expr)
 	if err != nil {
@@ -59,7 +59,7 @@ func SetContext(f funcs.Bool, context *funcs.Context) {
 	}
 }
 
-//NewBoolFunc returns the same function that it was given, but that has been trimmed and which is ready for variable values and evaluation.
+// NewBoolFunc returns the same function that it was given, but that has been trimmed and which is ready for variable values and evaluation.
 func NewBoolFunc(f funcs.Bool) (Bool, error) {
 	impls := FuncImplements(f, setterTyp)
 	setters := make([]Setter, len(impls))
@@ -69,7 +69,7 @@ func NewBoolFunc(f funcs.Bool) (Bool, error) {
 	return &composedBool{setters, f}, nil
 }
 
-//Eval evaluates the function given a value.
+// Eval evaluates the function given a value.
 func (this *composedBool) Eval(val parser.Value) (bool, error) {
 	for _, s := range this.Setters {
 		s.SetValue(val)
@@ -77,7 +77,7 @@ func (this *composedBool) Eval(val parser.Value) (bool, error) {
 	return this.Func.Eval()
 }
 
-//FuncImplements returns all the functions in the function tree that implements the provided type.
+// FuncImplements returns all the functions in the function tree that implements the provided type.
 func FuncImplements(i interface{}, typ reflect.Type) []interface{} {
 	e := reflect.ValueOf(i).Elem()
 	var is []interface{}

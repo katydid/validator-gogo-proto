@@ -2,7 +2,7 @@
 package debug
 
 import (
-	"github.com/katydid/katydid/parser"
+	"github.com/katydid/validator-go/parser"
 )
 
 func (*errValue) Double() (float64, error) {

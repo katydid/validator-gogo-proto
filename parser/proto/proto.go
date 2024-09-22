@@ -12,12 +12,12 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-//Package proto contains an implementation of a protocol buffer parser.
+// Package proto contains an implementation of a protocol buffer parser.
 //
-//Merging of fields and splitting of arrays are not supported by this parser for optimization reasons.
-//Use the NoLatentAppendingOrMerging function to check whether the marshaled buffer conforms to the limitations.
+// Merging of fields and splitting of arrays are not supported by this parser for optimization reasons.
+// Use the NoLatentAppendingOrMerging function to check whether the marshaled buffer conforms to the limitations.
 //
-//TODO: defaults, maps and proto3 zero values
+// TODO: defaults, maps and proto3 zero values
 package proto
 
 import (
@@ -28,7 +28,7 @@ import (
 	"unsafe"
 
 	descriptor "github.com/gogo/protobuf/protoc-gen-gogo/descriptor"
-	"github.com/katydid/katydid/parser"
+	"github.com/katydid/validator-go/parser"
 )
 
 type errVarint struct {
@@ -106,7 +106,7 @@ type state struct {
 	inPacked      bool
 }
 
-//ProtoParser represents a protocol buffer parser.
+// ProtoParser represents a protocol buffer parser.
 type ProtoParser interface {
 	parser.Interface
 	//Init initialises the parser with a marshaled protocol buffer.
@@ -119,8 +119,8 @@ type ProtoParser interface {
 	Field() *descriptor.FieldDescriptorProto
 }
 
-//NewProtoParser returns a new protocol buffer parser the specific root message.
-//When the value of a field name is requested this parser will return the field name using the String method.
+// NewProtoParser returns a new protocol buffer parser the specific root message.
+// When the value of a field name is requested this parser will return the field name using the String method.
 func NewProtoParser(rootPackage, rootMessage string, desc *descriptor.FileDescriptorSet) (ProtoParser, error) {
 	return newProtoParser(rootPackage, rootMessage, desc, true)
 }

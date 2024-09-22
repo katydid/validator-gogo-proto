@@ -19,9 +19,9 @@ import (
 	"testing"
 
 	"github.com/gogo/protobuf/proto"
-	"github.com/katydid/katydid/parser/debug"
-	"github.com/katydid/katydid/relapse/ast"
-	"github.com/katydid/katydid/relapse/funcs"
+	"github.com/katydid/validator-go/parser/debug"
+	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-go/relapse/funcs"
 )
 
 func TestComposeNot(t *testing.T) {

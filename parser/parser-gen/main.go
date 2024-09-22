@@ -12,13 +12,13 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-//Command parser-gen generates some of the code in the parser package.
+// Command parser-gen generates some of the code in the parser package.
 package main
 
 import (
 	"strings"
 
-	"github.com/katydid/katydid/gen"
+	"github.com/katydid/validator-go/gen"
 )
 
 type valuer struct {

@@ -6,8 +6,8 @@ import (
 	"bytes"
 	"fmt"
 
-	parseError "github.com/katydid/katydid/relapse/errors"
-	"github.com/katydid/katydid/relapse/token"
+	parseError "github.com/katydid/validator-go/relapse/errors"
+	"github.com/katydid/validator-go/relapse/token"
 )
 
 const (

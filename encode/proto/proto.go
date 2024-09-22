@@ -12,31 +12,32 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-//Package proto encodes a parser.Interface into marshaled protocol buffer.
-//This can be used for transcoding or dynamic marshaling.
-//Dynamic marshaling is when the protocol buffer has not been compiled into the source and only the descriptor struct is available.
+// Package proto encodes a parser.Interface into marshaled protocol buffer.
+// This can be used for transcoding or dynamic marshaling.
+// Dynamic marshaling is when the protocol buffer has not been compiled into the source and only the descriptor struct is available.
 //
-//TODO: more tests
+// TODO: more tests
 //
-//TODO: support for packed, proto3, maps, etc.
+// TODO: support for packed, proto3, maps, etc.
 package proto
 
 import (
-	"github.com/gogo/protobuf/protoc-gen-gogo/descriptor"
-	"github.com/katydid/katydid/parser"
-	protoparser "github.com/katydid/katydid/parser/proto"
 	"io"
 	"math"
+
+	"github.com/gogo/protobuf/protoc-gen-gogo/descriptor"
+	"github.com/katydid/validator-go/parser"
+	protoparser "github.com/katydid/validator-go/parser/proto"
 )
 
 const maxVarintSize = 10
 
-//Encoder encodes a parser.Interface into a byte slice containing marshaled protocol buffer.
+// Encoder encodes a parser.Interface into a byte slice containing marshaled protocol buffer.
 type Encoder interface {
 	Encode([]byte, parser.Interface) ([]byte, error)
 }
 
-//NewEncoder returns an Encoder that can marshal a parser.Interface into the specified protocol buffer message.
+// NewEncoder returns an Encoder that can marshal a parser.Interface into the specified protocol buffer message.
 func NewEncoder(desc *descriptor.FileDescriptorSet, pkgName, msgName string) (Encoder, error) {
 	descMap, err := protoparser.NewDescriptorMap(pkgName, msgName, desc)
 	if err != nil {

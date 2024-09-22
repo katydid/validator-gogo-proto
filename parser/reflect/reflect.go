@@ -12,13 +12,14 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-//Package reflect contains an implementation of a parser for a reflected go structure.
+// Package reflect contains an implementation of a parser for a reflected go structure.
 package reflect
 
 import (
-	"github.com/katydid/katydid/parser"
 	"io"
 	"reflect"
+
+	"github.com/katydid/validator-go/parser"
 )
 
 type state struct {
@@ -69,14 +70,14 @@ func isSlice(v reflect.Value) bool {
 	return v.Kind() == reflect.Slice && v.Type().Elem().Kind() != reflect.Uint8
 }
 
-//ReflectParser is a parser for a reflected go structure.
+// ReflectParser is a parser for a reflected go structure.
 type ReflectParser interface {
 	parser.Interface
 	//Init initialises the parser with a value of reflected go structure.
 	Init(value reflect.Value) ReflectParser
 }
 
-//NewReflectParser returns a new reflect parser.
+// NewReflectParser returns a new reflect parser.
 func NewReflectParser() ReflectParser {
 	return &reflectParser{stack: make([]state, 0, 10)}
 }

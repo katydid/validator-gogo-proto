@@ -7,7 +7,7 @@ import proto "github.com/gogo/protobuf/proto"
 import fmt "fmt"
 import math "math"
 import _ "github.com/gogo/protobuf/gogoproto"
-import types "github.com/katydid/katydid/relapse/types"
+import types "github.com/katydid/validator-go/relapse/types"
 
 import encoding_binary "encoding/binary"
 

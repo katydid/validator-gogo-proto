@@ -4,9 +4,9 @@ package parser
 
 import (
 	"github.com/gogo/protobuf/proto"
-	. "github.com/katydid/katydid/relapse/ast"
-	"github.com/katydid/katydid/relapse/token"
-	"github.com/katydid/katydid/relapse/types"
+	. "github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-go/relapse/token"
+	"github.com/katydid/validator-go/relapse/types"
 	"strconv"
 )
 

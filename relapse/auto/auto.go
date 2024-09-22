@@ -12,19 +12,19 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-//Package auto compiles a parsed relapse grammar into a visual pushdown automaton and executes it.
-//Compilation into a VPA may result in an exponential explosion, since fully converting a grammar to VPA is O(2^n^2).
-//Rather use the mem package.  It gives comparable speed and has no exponential behaviour.
-//This package is just here to provide a benchmark against the mem package.
+// Package auto compiles a parsed relapse grammar into a visual pushdown automaton and executes it.
+// Compilation into a VPA may result in an exponential explosion, since fully converting a grammar to VPA is O(2^n^2).
+// Rather use the mem package.  It gives comparable speed and has no exponential behaviour.
+// This package is just here to provide a benchmark against the mem package.
 package auto
 
 import (
 	"io"
 
-	"github.com/katydid/katydid/parser"
+	"github.com/katydid/validator-go/parser"
 )
 
-//Auto is the structure that represents the automaton.
+// Auto is the structure that represents the automaton.
 type Auto struct {
 	calls           []*callNode
 	returns         []map[int]int
@@ -34,7 +34,7 @@ type Auto struct {
 	accept          []bool
 }
 
-//Validate executes an automaton with the given parser and returns whether the parser is valid given the automaton's original grammar.
+// Validate executes an automaton with the given parser and returns whether the parser is valid given the automaton's original grammar.
 func (auto *Auto) Validate(p parser.Interface) (bool, error) {
 	final, err := deriv(auto, auto.start, p)
 	if err != nil {

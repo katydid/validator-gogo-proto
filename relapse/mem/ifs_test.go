@@ -17,10 +17,10 @@ package mem
 import (
 	"testing"
 
-	"github.com/katydid/katydid/parser"
-	"github.com/katydid/katydid/parser/debug"
-	"github.com/katydid/katydid/relapse/funcs"
-	"github.com/katydid/katydid/relapse/intern"
+	"github.com/katydid/validator-go/parser"
+	"github.com/katydid/validator-go/parser/debug"
+	"github.com/katydid/validator-go/relapse/funcs"
+	"github.com/katydid/validator-go/relapse/intern"
 )
 
 var (

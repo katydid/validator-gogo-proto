@@ -13,7 +13,7 @@
 # limitations under the License.
 
 regenerate:
-	go install github.com/katydid/katydid/relapse/funcs/funcs-gen
+	go install github.com/katydid/validator-go/relapse/funcs/funcs-gen
 	funcs-gen ./
 	goderive .
 	gofmt -l -s -w *.gen.go

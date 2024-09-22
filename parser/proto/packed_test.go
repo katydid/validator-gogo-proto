@@ -20,8 +20,8 @@ import (
 	"testing"
 
 	"github.com/gogo/protobuf/proto"
-	"github.com/katydid/katydid/parser/debug"
-	"github.com/katydid/katydid/parser/proto/prototests"
+	"github.com/katydid/validator-go/parser/debug"
+	"github.com/katydid/validator-go/parser/proto/prototests"
 )
 
 var packedInput1 = &prototests.Packed{

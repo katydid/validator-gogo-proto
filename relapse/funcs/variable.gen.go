@@ -2,7 +2,7 @@
 package funcs
 
 import (
-	"github.com/katydid/katydid/parser"
+	"github.com/katydid/validator-go/parser"
 	"strings"
 )
 

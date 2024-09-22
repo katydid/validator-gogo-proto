@@ -15,8 +15,9 @@
 package interp
 
 import (
-	"github.com/katydid/katydid/relapse/parser"
 	"testing"
+
+	"github.com/katydid/validator-go/relapse/parser"
 )
 
 func TestRecursionPositive(t *testing.T) {

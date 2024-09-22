@@ -21,8 +21,8 @@ import (
 	"time"
 
 	"github.com/gogo/protobuf/proto"
-	"github.com/katydid/katydid/encode/proto/prototests"
-	reflectparser "github.com/katydid/katydid/parser/reflect"
+	"github.com/katydid/validator-go/encode/proto/prototests"
+	reflectparser "github.com/katydid/validator-go/parser/reflect"
 )
 
 func makeEmptyNil(v reflect.Value) {

@@ -15,21 +15,22 @@
 package debug
 
 import (
-	"github.com/katydid/katydid/parser"
 	"log"
 	"os"
 	"path/filepath"
 	"runtime"
 	"strconv"
 	"time"
+
+	"github.com/katydid/validator-go/parser"
 )
 
-//Logger is an interface for a type that is made to log debug info.
+// Logger is an interface for a type that is made to log debug info.
 type Logger interface {
 	Printf(format string, v ...interface{})
 }
 
-//NewLineLogger returns a logger that logs the line at which the Printf method was called to stderr.
+// NewLineLogger returns a logger that logs the line at which the Printf method was called to stderr.
 func NewLineLogger() Logger {
 	return &line{log.New(os.Stderr, "", 0)}
 }
@@ -61,8 +62,8 @@ func (l *line) Printf(format string, v ...interface{}) {
 	}
 }
 
-//NewDelayLogger returns a logger that sleeps after every log.
-//This is useful for debugging infinite loops.
+// NewDelayLogger returns a logger that sleeps after every log.
+// This is useful for debugging infinite loops.
 func NewDelayLogger(delay time.Duration) Logger {
 	return &d{
 		delay: delay,
@@ -87,7 +88,7 @@ type l struct {
 	copies int
 }
 
-//NewLogger returns a parser that when called returns and logs the value returned by the argument parser to the argument logger.
+// NewLogger returns a parser that when called returns and logs the value returned by the argument parser to the argument logger.
 func NewLogger(s parser.Interface, logger Logger) parser.Interface {
 	return &l{"parser", s, logger, 0}
 }

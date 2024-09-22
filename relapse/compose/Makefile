@@ -13,5 +13,5 @@
 # limitations under the License.
 
 regenerate:
-	go install github.com/katydid/katydid/relapse/compose/compose-gen
+	go install github.com/katydid/validator-go/relapse/compose/compose-gen
 	compose-gen .

@@ -17,7 +17,7 @@ package sets
 import (
 	"sort"
 
-	"github.com/katydid/katydid/relapse/ast"
+	"github.com/katydid/validator-go/relapse/ast"
 )
 
 var (

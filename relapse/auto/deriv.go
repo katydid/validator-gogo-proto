@@ -18,11 +18,11 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/katydid/katydid/parser"
-	"github.com/katydid/katydid/relapse/ast"
-	"github.com/katydid/katydid/relapse/funcs"
-	"github.com/katydid/katydid/relapse/interp"
-	nameexpr "github.com/katydid/katydid/relapse/name"
+	"github.com/katydid/validator-go/parser"
+	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-go/relapse/funcs"
+	"github.com/katydid/validator-go/relapse/interp"
+	nameexpr "github.com/katydid/validator-go/relapse/name"
 )
 
 func compileDeriv(c *compiler, patterns int, tree parser.Interface) (int, error) {

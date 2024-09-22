@@ -17,7 +17,7 @@ syntax = "proto2";
 package ast;
 
 import "github.com/gogo/protobuf/gogoproto/gogo.proto";
-import "github.com/katydid/katydid/relapse/types/types.proto";
+import "github.com/katydid/validator-go/relapse/types/types.proto";
 
 option (gogoproto.goproto_stringer_all) = false;
 option (gogoproto.marshaler_all) = true;
@@ -230,7 +230,7 @@ message NameExpr {
 	optional Name Name = 1;
 	optional AnyName AnyName = 2;
 	optional AnyNameExcept AnyNameExcept = 3;
-	optional NameChoice NameChoice = 4; 
+	optional NameChoice NameChoice = 4;
 }
 
 //Name is a name expression and represents a union of all possible name type values.

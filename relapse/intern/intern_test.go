@@ -17,7 +17,7 @@ package intern
 import (
 	"testing"
 
-	"github.com/katydid/katydid/relapse/ast"
+	"github.com/katydid/validator-go/relapse/ast"
 )
 
 func TestInterningEmpty(t *testing.T) {

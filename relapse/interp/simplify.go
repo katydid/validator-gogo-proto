@@ -17,14 +17,14 @@ package interp
 import (
 	"fmt"
 
-	"github.com/katydid/katydid/relapse/ast"
-	"github.com/katydid/katydid/relapse/compose"
-	"github.com/katydid/katydid/relapse/funcs"
-	nameexpr "github.com/katydid/katydid/relapse/name"
-	"github.com/katydid/katydid/relapse/parser"
+	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-go/relapse/compose"
+	"github.com/katydid/validator-go/relapse/funcs"
+	nameexpr "github.com/katydid/validator-go/relapse/name"
+	"github.com/katydid/validator-go/relapse/parser"
 )
 
-//Simplifier simplifies the patterns of a given grammar.
+// Simplifier simplifies the patterns of a given grammar.
 type Simplifier interface {
 	//Simplify returns a pattern that has been simplified, transformed to an equivalent, but smaller or equal pattern.
 	Simplify(p *ast.Pattern) *ast.Pattern
@@ -42,7 +42,7 @@ type simplifier struct {
 	record bool
 }
 
-//NewSimplifier returns a new Simplifier that is used to simplify a grammar and its patterns.
+// NewSimplifier returns a new Simplifier that is used to simplify a grammar and its patterns.
 func NewSimplifier(g *ast.Grammar) Simplifier {
 	return &simplifier{
 		refs:  ast.NewRefLookup(g),

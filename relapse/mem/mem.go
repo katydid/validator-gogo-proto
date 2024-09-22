@@ -12,27 +12,27 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-//Package mem contains functions to interpret and memoize the execution of the grammar.
+// Package mem contains functions to interpret and memoize the execution of the grammar.
 //
-//TODO: cleanup
+// TODO: cleanup
 package mem
 
 import (
-	"github.com/katydid/katydid/parser"
-	"github.com/katydid/katydid/relapse/ast"
-	"github.com/katydid/katydid/relapse/funcs"
-	"github.com/katydid/katydid/relapse/intern"
-	"github.com/katydid/katydid/relapse/sets"
+	"github.com/katydid/validator-go/parser"
+	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-go/relapse/funcs"
+	"github.com/katydid/validator-go/relapse/intern"
+	"github.com/katydid/validator-go/relapse/sets"
 )
 
-//New creates a new memoizable grammar.
+// New creates a new memoizable grammar.
 func New(g *ast.Grammar) (*Mem, error) {
 	return new(g, false)
 }
 
-//New creates a new memoizable grammar which is optimized for records.
-//A record can be json, protobuf, reflected go structures or any structure that have unique field names for each structure.
-//XML would be an example of a structure for which this simplification is NOT appropriate.
+// New creates a new memoizable grammar which is optimized for records.
+// A record can be json, protobuf, reflected go structures or any structure that have unique field names for each structure.
+// XML would be an example of a structure for which this simplification is NOT appropriate.
 func NewRecord(g *ast.Grammar) (*Mem, error) {
 	return new(g, true)
 }
@@ -56,10 +56,10 @@ func new(g *ast.Grammar, record bool) (*Mem, error) {
 	return m, nil
 }
 
-//Validate interprets the grammar given the parser and returns whether the parser is valid given the grammar.
-//The intermediate results are memoized to help with the speed of future executions.
+// Validate interprets the grammar given the parser and returns whether the parser is valid given the grammar.
+// The intermediate results are memoized to help with the speed of future executions.
 //
-//NOTE: This is a naive implementation and it does not handle left recursion.
+// NOTE: This is a naive implementation and it does not handle left recursion.
 func (mem *Mem) Validate(p parser.Interface) (bool, error) {
 	final, err := deriv(mem, mem.start, p)
 	if err != nil {
@@ -72,7 +72,7 @@ func (mem *Mem) SetContext(context *funcs.Context) {
 	mem.construct.SetContext(context)
 }
 
-//Mem is the structure containing the memoized grammar.
+// Mem is the structure containing the memoized grammar.
 type Mem struct {
 	construct intern.Construct
 	states    *intern.SetOfPatterns

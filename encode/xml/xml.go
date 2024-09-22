@@ -12,22 +12,23 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-//Package xml encodes a parser.Interface into xml.
-//This can be used for transcoding.
+// Package xml encodes a parser.Interface into xml.
+// This can be used for transcoding.
 //
-//TODO: currently only handles very naive cases, more tests would help.
+// TODO: currently only handles very naive cases, more tests would help.
 package xml
 
 import (
 	"bytes"
 	"encoding/base64"
 	"encoding/xml"
-	"github.com/katydid/katydid/parser"
 	"io"
 	"strconv"
+
+	"github.com/katydid/validator-go/parser"
 )
 
-//Encode encodes a parser.Interface into a byte slice containing valid xml.
+// Encode encodes a parser.Interface into a byte slice containing valid xml.
 func Encode(p parser.Interface) ([]byte, error) {
 	buf := bytes.NewBuffer(nil)
 	e := xml.NewEncoder(buf)

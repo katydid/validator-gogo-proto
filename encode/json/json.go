@@ -12,18 +12,19 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-//Package json encodes a parser.Interface into json.
-//This can be used for transcoding or marshaling.
+// Package json encodes a parser.Interface into json.
+// This can be used for transcoding or marshaling.
 package json
 
 import (
 	"encoding/base64"
 	"encoding/json"
-	"github.com/katydid/katydid/parser"
 	"io"
+
+	"github.com/katydid/validator-go/parser"
 )
 
-//Encode encodes a parser.Interface into a byte slice containing valid json.
+// Encode encodes a parser.Interface into a byte slice containing valid json.
 func Encode(p parser.Interface) ([]byte, error) {
 	m, err := encode(p)
 	if err != nil {

@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"unicode/utf8"
 
-	"github.com/katydid/katydid/relapse/token"
+	"github.com/katydid/validator-go/relapse/token"
 )
 
 const (

@@ -14,7 +14,7 @@
 
 package intern
 
-import "github.com/katydid/katydid/relapse/sets"
+import "github.com/katydid/validator-go/relapse/sets"
 
 func anyNullable(ps []*Pattern) bool {
 	for _, any := range ps {

@@ -16,15 +16,16 @@ package ast
 
 import (
 	"fmt"
-	"github.com/gogo/protobuf/proto"
-	"github.com/katydid/katydid/relapse/token"
-	"github.com/katydid/katydid/relapse/types"
 	"strconv"
 	"strings"
 	"unicode/utf8"
+
+	"github.com/gogo/protobuf/proto"
+	"github.com/katydid/validator-go/relapse/token"
+	"github.com/katydid/validator-go/relapse/types"
 )
 
-//NewKeyword is a parser utility function that returns a Keyword given a space and a token.
+// NewKeyword is a parser utility function that returns a Keyword given a space and a token.
 func NewKeyword(space interface{}, v interface{}) *Keyword {
 	t := v.(*token.Token)
 	k := &Keyword{
@@ -36,41 +37,41 @@ func NewKeyword(space interface{}, v interface{}) *Keyword {
 	return k
 }
 
-//NewSpace is a parser utility function that returns a Space given a token
+// NewSpace is a parser utility function that returns a Space given a token
 func NewSpace(s interface{}) *Space {
 	t := s.(*token.Token)
 	return &Space{Space: []string{string(t.Lit)}}
 }
 
-//NewAppendSpace is a parser utility function that returns a Space by append the given string to the given Space's Space field, which is a list of strings.
+// NewAppendSpace is a parser utility function that returns a Space by append the given string to the given Space's Space field, which is a list of strings.
 func AppendSpace(ss interface{}, s string) *Space {
 	space := ss.(*Space)
 	space.Space = append(space.Space, s)
 	return space
 }
 
-//SetTerminalSpace is a parser utility function that takes a Terminal and a Space and places the Space inside the returned Terminal.
+// SetTerminalSpace is a parser utility function that takes a Terminal and a Space and places the Space inside the returned Terminal.
 func SetTerminalSpace(term interface{}, s interface{}) *Terminal {
 	terminal := term.(*Terminal)
 	terminal.Before = s.(*Space)
 	return terminal
 }
 
-//SetRightArrow is a parser utitliy function that takes an Expression and a RightArrow and places the RightArrow inside the returned Expression.
+// SetRightArrow is a parser utitliy function that takes an Expression and a RightArrow and places the RightArrow inside the returned Expression.
 func SetRightArrow(expr interface{}, rightArrow interface{}) *Expr {
 	e := expr.(*Expr)
 	e.RightArrow = rightArrow.(*Keyword)
 	return e
 }
 
-//SetExpComma is a parser utility function that takes an expression and a comma Keyword and places the comma inside the returned Expr.
+// SetExpComma is a parser utility function that takes an expression and a comma Keyword and places the comma inside the returned Expr.
 func SetExprComma(e interface{}, c interface{}) *Expr {
 	expr := e.(*Expr)
 	expr.Comma = c.(*Keyword)
 	return expr
 }
 
-//Strip is a parser utility function that removes all versions of the given sub string from the slit string and also removes possible surrounding parentheses.
+// Strip is a parser utility function that removes all versions of the given sub string from the slit string and also removes possible surrounding parentheses.
 func Strip(slit string, sub string) []byte {
 	slit = strings.Replace(slit, sub, "", -1)
 	if slit[0] != '(' {
@@ -79,12 +80,12 @@ func Strip(slit string, sub string) []byte {
 	return []byte(slit[1 : len(slit)-1])
 }
 
-//NewVariableTerminal is a parser utility function that returns a Terminal given a type.
+// NewVariableTerminal is a parser utility function that returns a Terminal given a type.
 func NewVariableTerminal(typ types.Type) (*Terminal, error) {
 	return &Terminal{Variable: &Variable{Type: typ}}, nil
 }
 
-//NewBoolTerminal is a parser utility function that returns a Terminal of type bool given a bool.
+// NewBoolTerminal is a parser utility function that returns a Terminal of type bool given a bool.
 func NewBoolTerminal(v interface{}) *Terminal {
 	b := v.(bool)
 	if b {
@@ -93,13 +94,13 @@ func NewBoolTerminal(v interface{}) *Terminal {
 	return &Terminal{BoolValue: proto.Bool(b), Literal: "false"}
 }
 
-//NewStringTerminal is a parser utility function that returns a Terminal of type string given a string literal.
-//The input string is also unquoted.
+// NewStringTerminal is a parser utility function that returns a Terminal of type string given a string literal.
+// The input string is also unquoted.
 func NewStringTerminal(slit string) (*Terminal, error) {
 	return &Terminal{StringValue: proto.String(ToString(slit)), Literal: slit}, nil
 }
 
-//ToString unquotes a quoted string or returns the original string.
+// ToString unquotes a quoted string or returns the original string.
 func ToString(s1 string) string {
 	s, err := strconv.Unquote(s1)
 	if err != nil {
@@ -108,12 +109,12 @@ func ToString(s1 string) string {
 	return s
 }
 
-//NewIntTerminal is a parser utility function that parses the int value out of the input string and returns a Terminal of type int.
+// NewIntTerminal is a parser utility function that parses the int value out of the input string and returns a Terminal of type int.
 func NewIntTerminal(slit string) (*Terminal, error) {
 	return &Terminal{IntValue: ToInt64(Strip(slit, "int")), Literal: slit}, nil
 }
 
-//ToInt64 is a parser utility function that returns a pointer to a parsed an int64 or panics.
+// ToInt64 is a parser utility function that returns a pointer to a parsed an int64 or panics.
 func ToInt64(tok []byte) *int64 {
 	i, err := strconv.ParseInt(string(tok), 10, 64)
 	if err != nil {
@@ -122,12 +123,12 @@ func ToInt64(tok []byte) *int64 {
 	return &i
 }
 
-//NewUintTerminal is a parser utility function that parses the uint value out of the input string and returns a Terminal of type uint.
+// NewUintTerminal is a parser utility function that parses the uint value out of the input string and returns a Terminal of type uint.
 func NewUintTerminal(slit string) (*Terminal, error) {
 	return &Terminal{UintValue: ToUint64(Strip(slit, "uint")), Literal: slit}, nil
 }
 
-//ToUint64 is a parser utility function that returns a pointer to a parsed an uint64 or panics.
+// ToUint64 is a parser utility function that returns a pointer to a parsed an uint64 or panics.
 func ToUint64(tok []byte) *uint64 {
 	i, err := strconv.ParseUint(string(tok), 10, 64)
 	if err != nil {
@@ -136,12 +137,12 @@ func ToUint64(tok []byte) *uint64 {
 	return &i
 }
 
-//NewDoubleTerminal is a parser utility function that parses the double value out of the input string and returns a Terminal of type double.
+// NewDoubleTerminal is a parser utility function that parses the double value out of the input string and returns a Terminal of type double.
 func NewDoubleTerminal(slit string) (*Terminal, error) {
 	return &Terminal{DoubleValue: ToFloat64(Strip(slit, "double")), Literal: slit}, nil
 }
 
-//ToFloat64 is a parser utility function that returns a pointer to a parsed an float64 or panics.
+// ToFloat64 is a parser utility function that returns a pointer to a parsed an float64 or panics.
 func ToFloat64(tok []byte) *float64 {
 	f, err := strconv.ParseFloat(string(tok), 64)
 	if err != nil {
@@ -150,7 +151,7 @@ func ToFloat64(tok []byte) *float64 {
 	return &f
 }
 
-//NewBytesTerminal is a parser utility function that parses the []byte value out of the input string and returns a Terminal of type []byte.
+// NewBytesTerminal is a parser utility function that parses the []byte value out of the input string and returns a Terminal of type []byte.
 func NewBytesTerminal(stringLit string) (*Terminal, error) {
 	data, err := parseBytes(stringLit)
 	if err != nil {
@@ -235,7 +236,7 @@ func parseByte(s string) (byte, error) {
 	return 0, fmt.Errorf("int too large %d", i)
 }
 
-//NewSDTName is a parser utility function that returns a NameExpr given a white space and a terminal value expression.
+// NewSDTName is a parser utility function that returns a NameExpr given a white space and a terminal value expression.
 func NewSDTName(space *Space, term *Terminal) *NameExpr {
 	name := &NameExpr{
 		Name: &Name{

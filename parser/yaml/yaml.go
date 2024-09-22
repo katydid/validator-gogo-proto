@@ -12,7 +12,7 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-//Package yaml contains the implementation of a YAML parser.
+// Package yaml contains the implementation of a YAML parser.
 package yaml
 
 import (
@@ -22,10 +22,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/katydid/katydid/parser"
+	"github.com/katydid/validator-go/parser"
 )
 
-//YamlParser is a parser for YAML
+// YamlParser is a parser for YAML
 type YamlParser interface {
 	parser.Interface
 	//Init initialises the parser with a byte buffer containing YAML.
@@ -33,7 +33,7 @@ type YamlParser interface {
 	Reset() error
 }
 
-//NewYamlParser returns a new YAML parser.
+// NewYamlParser returns a new YAML parser.
 func NewYamlParser() YamlParser {
 	return &yamlParser{
 		state: state{

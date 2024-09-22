@@ -15,9 +15,10 @@
 package reflect
 
 import (
-	"github.com/katydid/katydid/parser/debug"
 	"reflect"
 	"testing"
+
+	"github.com/katydid/validator-go/parser/debug"
 )
 
 func TestDebug(t *testing.T) {

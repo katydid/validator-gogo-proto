@@ -18,8 +18,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/katydid/katydid/relapse/ast"
-	"github.com/katydid/katydid/relapse/parser"
+	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-go/relapse/parser"
 )
 
 func format(t *testing.T, input string, expected string) {
@@ -121,11 +121,11 @@ func TestFormatSpace(t *testing.T) {
 
 
 
-	/*blockcomment*/  
+	/*blockcomment*/
 
 
 
-  //linecomment2  
+  //linecomment2
 `, `//linecomment
 
 /*blockcomment*/
@@ -145,14 +145,14 @@ func TestFormatSpace(t *testing.T) {
 	formatSpace(t,
 		`	/*blockcomment
 		more text
-*/	
+*/
 		`, `/*blockcomment
 		more text
 */`)
 	formatSpace(t,
 		`	/*blockcomment
 		more text
-*/	
+*/
 
 		/*blockcomment2*/
 
@@ -160,7 +160,7 @@ func TestFormatSpace(t *testing.T) {
 
 
 
-	/*  
+	/*
 		block3
 		block2
 		block1
@@ -171,7 +171,7 @@ func TestFormatSpace(t *testing.T) {
 
 /*blockcomment2*/
 
-/*  
+/*
 		block3
 		block2
 		block1
@@ -179,7 +179,7 @@ func TestFormatSpace(t *testing.T) {
 	formatSpace(t,
 		`	/*blockcomment
 		more text
-*/	
+*/
 
 		//linecomment
 
@@ -187,7 +187,7 @@ func TestFormatSpace(t *testing.T) {
 
 
 
-	/*  
+	/*
 		block3
 		block2
 		block1
@@ -198,7 +198,7 @@ func TestFormatSpace(t *testing.T) {
 
 //linecomment
 
-/*  
+/*
 		block3
 		block2
 		block1

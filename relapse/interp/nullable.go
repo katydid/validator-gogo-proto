@@ -16,11 +16,12 @@ package interp
 
 import (
 	"fmt"
-	"github.com/katydid/katydid/relapse/ast"
+
+	"github.com/katydid/validator-go/relapse/ast"
 )
 
-//Nullable returns whether the input Pattern p also matches the empty string.
-//This is a naive implementation and it does not handle left recursion.
+// Nullable returns whether the input Pattern p also matches the empty string.
+// This is a naive implementation and it does not handle left recursion.
 func Nullable(refs ast.RefLookup, p *ast.Pattern) bool {
 	typ := p.GetValue()
 	switch v := typ.(type) {

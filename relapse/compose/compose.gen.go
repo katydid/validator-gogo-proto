@@ -2,9 +2,9 @@
 package compose
 
 import (
-	"github.com/katydid/katydid/relapse/ast"
-	"github.com/katydid/katydid/relapse/funcs"
-	"github.com/katydid/katydid/relapse/types"
+	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-go/relapse/funcs"
+	"github.com/katydid/validator-go/relapse/types"
 )
 
 func composeDouble(expr *ast.Expr) (funcs.Double, error) {

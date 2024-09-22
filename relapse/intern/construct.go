@@ -18,11 +18,11 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/katydid/katydid/relapse/ast"
-	"github.com/katydid/katydid/relapse/compose"
-	"github.com/katydid/katydid/relapse/funcs"
-	"github.com/katydid/katydid/relapse/interp"
-	nameexpr "github.com/katydid/katydid/relapse/name"
+	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-go/relapse/compose"
+	"github.com/katydid/validator-go/relapse/funcs"
+	"github.com/katydid/validator-go/relapse/interp"
+	nameexpr "github.com/katydid/validator-go/relapse/name"
 )
 
 type Construct interface {

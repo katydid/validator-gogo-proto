@@ -6,7 +6,7 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/katydid/katydid/relapse/token"
+	"github.com/katydid/validator-go/relapse/token"
 )
 
 type ErrorSymbol interface {

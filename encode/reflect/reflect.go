@@ -12,18 +12,19 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-//Package reflect encodes a parser.Interface into a reflected go structure.
-//This can be used to unmarshal or copy.
+// Package reflect encodes a parser.Interface into a reflected go structure.
+// This can be used to unmarshal or copy.
 package reflect
 
 import (
 	"fmt"
-	"github.com/katydid/katydid/parser"
 	"io"
 	"reflect"
+
+	"github.com/katydid/validator-go/parser"
 )
 
-//Encode encodes a parser.Interface into a go structure value.
+// Encode encodes a parser.Interface into a go structure value.
 func Encode(p parser.Interface, v interface{}) error {
 	r := reflect.ValueOf(v)
 	return encodeStruct(p, r)

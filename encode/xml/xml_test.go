@@ -16,9 +16,10 @@ package xml
 
 import (
 	"encoding/xml"
-	xmlparser "github.com/katydid/katydid/parser/xml"
 	"reflect"
 	"testing"
+
+	xmlparser "github.com/katydid/validator-go/parser/xml"
 )
 
 func testTranscode(t *testing.T, input interface{}) {

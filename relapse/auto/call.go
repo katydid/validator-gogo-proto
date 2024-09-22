@@ -15,13 +15,13 @@
 package auto
 
 import (
-	"github.com/katydid/katydid/parser"
-	"github.com/katydid/katydid/relapse/compose"
-	"github.com/katydid/katydid/relapse/sets"
+	"github.com/katydid/validator-go/parser"
+	"github.com/katydid/validator-go/relapse/compose"
+	"github.com/katydid/validator-go/relapse/sets"
 )
 
-//callNode represents a node in the call tree.
-//The call tree is basically a nested if then else tree, which results in child states and stack elements.
+// callNode represents a node in the call tree.
+// The call tree is basically a nested if then else tree, which results in child states and stack elements.
 type callNode struct {
 	cond       compose.Bool
 	then       *callNode
@@ -65,7 +65,7 @@ func (this *compiler) newCallTree(parentPatterns int, node *ifExprs) (*callNode,
 	}, nil
 }
 
-//eval evaluates the call tree returning the child state and stack element given the label value of the parser element.
+// eval evaluates the call tree returning the child state and stack element given the label value of the parser element.
 func (this *callNode) eval(label parser.Value) (int, int, error) {
 	if this.cond == nil {
 		return this.child, this.stackIndex, nil

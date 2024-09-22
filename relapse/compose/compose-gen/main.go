@@ -12,11 +12,11 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-//Command compose-gen generates some of the code in the compose package.
+// Command compose-gen generates some of the code in the compose package.
 package main
 
 import (
-	"github.com/katydid/katydid/gen"
+	"github.com/katydid/validator-go/gen"
 )
 
 const composeStr = `
@@ -85,7 +85,7 @@ func main() {
 		&composer{"String", "SINGLE_STRING", "String", "Strings", "LIST_STRING"},
 		&composer{"Bytes", "SINGLE_BYTES", "Bytes", "ListOfBytes", "LIST_BYTES"},
 	},
-		`"github.com/katydid/katydid/relapse/ast"`,
-		`"github.com/katydid/katydid/relapse/funcs"`,
-		`"github.com/katydid/katydid/relapse/types"`)
+		`"github.com/katydid/validator-go/relapse/ast"`,
+		`"github.com/katydid/validator-go/relapse/funcs"`,
+		`"github.com/katydid/validator-go/relapse/types"`)
 }

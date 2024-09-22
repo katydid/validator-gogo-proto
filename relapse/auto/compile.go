@@ -17,19 +17,19 @@ package auto
 import (
 	"errors"
 
-	"github.com/katydid/katydid/relapse/ast"
-	"github.com/katydid/katydid/relapse/sets"
+	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-go/relapse/sets"
 )
 
-//TODO document
+// TODO document
 var ErrTooManyStates = errors.New("a state explosion has occured")
 
-//Compile compiles a parsed relapse grammar ast into a visual pushdown automaton.
+// Compile compiles a parsed relapse grammar ast into a visual pushdown automaton.
 func Compile(g *ast.Grammar) (*Auto, error) {
 	return compileAuto(g, false)
 }
 
-//CompileRecord compiles a parsed relapse grammar and optimizes it for the case where the input structures are records.
+// CompileRecord compiles a parsed relapse grammar and optimizes it for the case where the input structures are records.
 func CompileRecord(g *ast.Grammar) (*Auto, error) {
 	return compileAuto(g, true)
 }
@@ -53,7 +53,7 @@ func compileAuto(g *ast.Grammar, record bool) (*Auto, error) {
 	return a, nil
 }
 
-//Compile memoizes the full state space, all possible things that can be memoized.
+// Compile memoizes the full state space, all possible things that can be memoized.
 func (c *compiler) compile() error {
 	changed := true
 	visited := make(map[int]bool)

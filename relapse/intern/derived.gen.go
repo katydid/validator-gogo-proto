@@ -3,7 +3,7 @@
 package intern
 
 import (
-	ast "github.com/katydid/katydid/relapse/ast"
+	ast "github.com/katydid/validator-go/relapse/ast"
 )
 
 // deriveTraverse returns a list where each element of the input list has been morphed by the input function or an error.
