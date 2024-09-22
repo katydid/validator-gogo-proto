@@ -16,6 +16,8 @@ jobs:
       run: go mod download -x
     - name: Setup protoc
       run: ./install-protoc.sh
+      with:
+        path: gopath/src/github.com/katydid/validator-go
     - name: Install tools
       run: go install -x github.com/goccmack/gocc github.com/awalterschulze/goderive github.com/gogo/protobuf/protoc-gen-gogo
     - name: Generate
