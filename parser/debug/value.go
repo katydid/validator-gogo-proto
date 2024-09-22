@@ -15,77 +15,113 @@
 package debug
 
 import (
-	"github.com/gogo/protobuf/proto"
+	"github.com/katydid/validator-go/parser"
 )
 
-//Input is a sample instance of the Debug struct.
-var Input = &Debug{
-	A: int64(1),
-	B: []string{"b2", "b3"},
-	C: &Debug{
-		A: int64(2),
-		D: proto.Int32(3),
-		E: []*Debug{
-			{
-				B: []string{"b4"},
-			},
-			{
-				B: []string{"b5"},
-			},
-		},
-	},
-	D: proto.Int32(4),
-	F: []uint32{5},
+func (*errValue) Double() (float64, error) {
+	return 0, parser.ErrNotDouble
 }
 
-//Output is a sample instance of Nodes that repesents the Input variable after it has been parsed by Walk.
-var Output = Nodes{
-	Field(`A`, `1`),
-	Nested(`B`,
-		Field(`0`, `b2`),
-		Field(`1`, `b3`),
-	),
-	Nested(`C`,
-		Field(`A`, `2`),
-		Field(`D`, `3`),
-		Nested(`E`,
-			Nested(`0`,
-				Field(`A`, `0`),
-				Nested(`B`,
-					Field(`0`, `b4`),
-				),
-			),
-			Nested(`1`,
-				Field(`A`, `0`),
-				Nested(`B`,
-					Field(`0`, `b5`),
-				),
-			),
-		),
-	),
-	Field(`D`, `4`),
-	Nested(`F`,
-		Field(`0`, `5`),
-	),
+func (*errValue) Bytes() ([]byte, error) {
+	return nil, parser.ErrNotBytes
 }
 
-//Field is a helper function for creating a Node with a label and one child label.
-//This is how a field with a value is typically represented.
-func Field(name string, value string) Node {
-	return Node{
-		Label: name,
-		Children: Nodes{
-			Node{
-				Label: value,
-			},
-		},
-	}
+func (*errValue) Int() (int64, error) {
+	return 0, parser.ErrNotInt
 }
 
-//Nested is a helper function for creating a Node.
-func Nested(name string, fs ...Node) Node {
-	return Node{
-		Label:    name,
-		Children: Nodes(fs),
-	}
+func (*errValue) Bool() (bool, error) {
+	return false, parser.ErrNotBool
+}
+
+func (*errValue) Uint() (uint64, error) {
+	return 0, parser.ErrNotUint
+}
+
+func (*errValue) String() (string, error) {
+	return "", parser.ErrNotString
+}
+
+type doubleValue struct {
+	*errValue
+	v float64
+}
+
+// NewDoubleValue wraps a native go type into a parser.Value.
+func NewDoubleValue(v float64) parser.Value {
+	return &doubleValue{&errValue{}, v}
+}
+
+func (v *doubleValue) Double() (float64, error) {
+	return v.v, nil
+}
+
+type intValue struct {
+	*errValue
+	v int64
+}
+
+// NewIntValue wraps a native go type into a parser.Value.
+func NewIntValue(v int64) parser.Value {
+	return &intValue{&errValue{}, v}
+}
+
+func (v *intValue) Int() (int64, error) {
+	return v.v, nil
+}
+
+type uintValue struct {
+	*errValue
+	v uint64
+}
+
+// NewUintValue wraps a native go type into a parser.Value.
+func NewUintValue(v uint64) parser.Value {
+	return &uintValue{&errValue{}, v}
+}
+
+func (v *uintValue) Uint() (uint64, error) {
+	return v.v, nil
+}
+
+type boolValue struct {
+	*errValue
+	v bool
+}
+
+// NewBoolValue wraps a native go type into a parser.Value.
+func NewBoolValue(v bool) parser.Value {
+	return &boolValue{&errValue{}, v}
+}
+
+func (v *boolValue) Bool() (bool, error) {
+	return v.v, nil
+}
+
+type stringValue struct {
+	*errValue
+	v string
+}
+
+// NewStringValue wraps a native go type into a parser.Value.
+func NewStringValue(v string) parser.Value {
+	return &stringValue{&errValue{}, v}
+}
+
+func (v *stringValue) String() (string, error) {
+	return v.v, nil
+}
+
+type bytesValue struct {
+	*errValue
+	v []byte
+}
+
+// NewBytesValue wraps a native go type into a parser.Value.
+func NewBytesValue(v []byte) parser.Value {
+	return &bytesValue{&errValue{}, v}
+}
+
+func (v *bytesValue) Bytes() ([]byte, error) {
+	return v.v, nil
 }

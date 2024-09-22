@@ -13,9 +13,4 @@
 # limitations under the License.
 
 regenerate:
-	go install github.com/katydid/validator-go/parser/debug/debug-gen
-	debug-gen ./
 	(protoc --gogo_out=. -I=.:../../../../../:../../../../../github.com/gogo/protobuf/protobuf debug.proto)
-
-nuke:
-	rm value.gen.go || true
