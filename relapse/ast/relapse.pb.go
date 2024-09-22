@@ -8,7 +8,7 @@ import (
 	fmt "fmt"
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
-	types "github.com/katydid/validator-go/relapse/types"
+	types "github.com/katydid/validator-gogo-proto/relapse/types"
 	io "io"
 	math "math"
 	math_bits "math/bits"

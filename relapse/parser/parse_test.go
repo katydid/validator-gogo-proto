@@ -17,7 +17,7 @@ package parser_test
 import (
 	"testing"
 
-	"github.com/katydid/validator-go/relapse/parser"
+	"github.com/katydid/validator-gogo-proto/relapse/parser"
 )
 
 func TestParse(t *testing.T) {

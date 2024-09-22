@@ -1,4 +1,4 @@
-module github.com/katydid/validator-go
+module github.com/katydid/validator-gogo-proto
 
 go 1.22
 

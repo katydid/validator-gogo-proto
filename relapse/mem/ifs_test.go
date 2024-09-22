@@ -18,10 +18,10 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/katydid/validator-go/parser"
-	"github.com/katydid/validator-go/parser/debug"
-	"github.com/katydid/validator-go/relapse/funcs"
-	"github.com/katydid/validator-go/relapse/intern"
+	"github.com/katydid/validator-gogo-proto/parser"
+	"github.com/katydid/validator-gogo-proto/parser/debug"
+	"github.com/katydid/validator-gogo-proto/relapse/funcs"
+	"github.com/katydid/validator-gogo-proto/relapse/intern"
 )
 
 var (

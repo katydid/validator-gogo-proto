@@ -5,7 +5,7 @@ package ast
 import (
 	"bytes"
 	"fmt"
-	types "github.com/katydid/validator-go/relapse/types"
+	types "github.com/katydid/validator-gogo-proto/relapse/types"
 	"math"
 	"strings"
 )

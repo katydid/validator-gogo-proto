@@ -17,7 +17,7 @@ package auto
 import (
 	"testing"
 
-	"github.com/katydid/validator-go/relapse/parser"
+	"github.com/katydid/validator-gogo-proto/relapse/parser"
 )
 
 func benchCompile(b *testing.B, str string) {

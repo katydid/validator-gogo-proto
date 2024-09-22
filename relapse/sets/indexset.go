@@ -15,7 +15,7 @@
 package sets
 
 import (
-	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-gogo-proto/relapse/ast"
 )
 
 // Ints represents an indexed list of list of integers.

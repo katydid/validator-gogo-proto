@@ -18,7 +18,7 @@ import (
 	"sort"
 
 	"github.com/gogo/protobuf/proto"
-	"github.com/katydid/validator-go/relapse/types"
+	"github.com/katydid/validator-gogo-proto/relapse/types"
 )
 
 // RefLookup represents a relapse grammar as a map of references.

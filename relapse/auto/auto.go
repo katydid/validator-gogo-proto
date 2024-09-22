@@ -21,7 +21,7 @@ package auto
 import (
 	"io"
 
-	"github.com/katydid/validator-go/parser"
+	"github.com/katydid/validator-gogo-proto/parser"
 )
 
 // Auto is the structure that represents the automaton.

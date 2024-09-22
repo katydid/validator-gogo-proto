@@ -17,7 +17,7 @@ package interp
 import (
 	"fmt"
 
-	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-gogo-proto/relapse/ast"
 )
 
 // HasRecursion returns whether the grammar contains any references that does not have a TreeNode pattern in between.

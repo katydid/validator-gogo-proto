@@ -28,7 +28,7 @@ import (
 	"unsafe"
 
 	descriptor "github.com/gogo/protobuf/protoc-gen-gogo/descriptor"
-	"github.com/katydid/validator-go/parser"
+	"github.com/katydid/validator-gogo-proto/parser"
 )
 
 type errVarint struct {

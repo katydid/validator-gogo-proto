@@ -17,7 +17,7 @@ package yaml
 import (
 	"testing"
 
-	"github.com/katydid/validator-go/parser/debug"
+	"github.com/katydid/validator-gogo-proto/parser/debug"
 )
 
 func testYaml(t *testing.T, s string, output debug.Nodes) {

@@ -17,11 +17,11 @@ package interp
 import (
 	"fmt"
 
-	"github.com/katydid/validator-go/relapse/ast"
-	"github.com/katydid/validator-go/relapse/compose"
-	"github.com/katydid/validator-go/relapse/funcs"
-	nameexpr "github.com/katydid/validator-go/relapse/name"
-	"github.com/katydid/validator-go/relapse/parser"
+	"github.com/katydid/validator-gogo-proto/relapse/ast"
+	"github.com/katydid/validator-gogo-proto/relapse/compose"
+	"github.com/katydid/validator-gogo-proto/relapse/funcs"
+	nameexpr "github.com/katydid/validator-gogo-proto/relapse/name"
+	"github.com/katydid/validator-gogo-proto/relapse/parser"
 )
 
 // Simplifier simplifies the patterns of a given grammar.

@@ -18,7 +18,7 @@ import (
 	"reflect"
 	"testing"
 
-	reflectparser "github.com/katydid/validator-go/parser/reflect"
+	reflectparser "github.com/katydid/validator-gogo-proto/parser/reflect"
 )
 
 func testCopy(t *testing.T, input interface{}) {

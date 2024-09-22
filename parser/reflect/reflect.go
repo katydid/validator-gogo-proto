@@ -19,7 +19,7 @@ import (
 	"io"
 	"reflect"
 
-	"github.com/katydid/validator-go/parser"
+	"github.com/katydid/validator-gogo-proto/parser"
 )
 
 type state struct {

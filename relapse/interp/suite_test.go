@@ -18,10 +18,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/katydid/validator-go/parser"
-	"github.com/katydid/validator-go/relapse/ast"
-	"github.com/katydid/validator-go/relapse/interp"
-	"github.com/katydid/validator-go/relapse/testsuite"
+	"github.com/katydid/validator-gogo-proto/parser"
+	"github.com/katydid/validator-gogo-proto/relapse/ast"
+	"github.com/katydid/validator-gogo-proto/relapse/interp"
+	"github.com/katydid/validator-gogo-proto/relapse/testsuite"
 )
 
 func TestSuite(t *testing.T) {

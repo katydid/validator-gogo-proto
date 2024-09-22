@@ -18,8 +18,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/katydid/validator-go/parser"
-	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-gogo-proto/parser"
+	"github.com/katydid/validator-gogo-proto/relapse/ast"
 )
 
 // Interpret interprets the grammar given the parser and returns whether the parser is valid given the grammar.

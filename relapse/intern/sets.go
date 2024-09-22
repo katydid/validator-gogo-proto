@@ -15,7 +15,7 @@
 package intern
 
 import (
-	"github.com/katydid/validator-go/relapse/sets"
+	"github.com/katydid/validator-gogo-proto/relapse/sets"
 )
 
 // SetOfPatterns represents an indexed list of list of Patterns.

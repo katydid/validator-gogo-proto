@@ -18,11 +18,11 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/katydid/validator-go/parser"
-	"github.com/katydid/validator-go/relapse/ast"
-	"github.com/katydid/validator-go/relapse/compose"
-	nameexpr "github.com/katydid/validator-go/relapse/name"
-	"github.com/katydid/validator-go/relapse/sets"
+	"github.com/katydid/validator-gogo-proto/parser"
+	"github.com/katydid/validator-gogo-proto/relapse/ast"
+	"github.com/katydid/validator-gogo-proto/relapse/compose"
+	nameexpr "github.com/katydid/validator-gogo-proto/relapse/name"
+	"github.com/katydid/validator-gogo-proto/relapse/sets"
 )
 
 // Interpret interprets the grammar given the parser and returns whether the parser is valid given the grammar.

@@ -5,7 +5,7 @@ package lexer
 import (
 	"fmt"
 
-	"github.com/katydid/validator-go/relapse/token"
+	"github.com/katydid/validator-gogo-proto/relapse/token"
 )
 
 type ActionTable [NumStates]ActionRow

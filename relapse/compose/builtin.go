@@ -15,8 +15,8 @@
 package compose
 
 import (
-	"github.com/katydid/validator-go/relapse/ast"
-	"github.com/katydid/validator-go/relapse/types"
+	"github.com/katydid/validator-gogo-proto/relapse/ast"
+	"github.com/katydid/validator-gogo-proto/relapse/types"
 )
 
 // ConvertBuiltInIntoFunction converts a BuiltIn Expr into a Function Expr.

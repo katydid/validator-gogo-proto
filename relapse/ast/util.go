@@ -21,8 +21,8 @@ import (
 	"unicode/utf8"
 
 	"github.com/gogo/protobuf/proto"
-	"github.com/katydid/validator-go/relapse/token"
-	"github.com/katydid/validator-go/relapse/types"
+	"github.com/katydid/validator-gogo-proto/relapse/token"
+	"github.com/katydid/validator-gogo-proto/relapse/types"
 )
 
 // NewKeyword is a parser utility function that returns a Keyword given a space and a token.

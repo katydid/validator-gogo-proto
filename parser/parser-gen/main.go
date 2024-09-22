@@ -18,7 +18,7 @@ package main
 import (
 	"strings"
 
-	"github.com/katydid/validator-go/gen"
+	"github.com/katydid/validator-gogo-proto/gen"
 )
 
 type valuer struct {
