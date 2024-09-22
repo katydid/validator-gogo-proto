@@ -15,7 +15,7 @@ jobs:
     - name: Fetch dependencies
       run: go mod download -x
     - name: Install tools
-      run: go install -x github.com/kisielk/errcheck golang.org/x/lint/golint github.com/goccmack/gocc github.com/awalterschulze/goderive github.com/gogo/protobuf
+      run: go install -x github.com/goccmack/gocc github.com/awalterschulze/goderive github.com/gogo/protobuf
     - name: Generate
       run: make regenerate
     - name: Build
