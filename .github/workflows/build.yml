@@ -15,9 +15,7 @@ jobs:
     - name: Fetch dependencies
       run: go mod download -x
     - name: Setup protoc
-        env:
-          PROTOBUF_VERSION: ${{ matrix.protobuf_version }}
-        run: ./install-protoc.sh
+      run: ./install-protoc.sh
     - name: Install tools
       run: go install -x github.com/goccmack/gocc github.com/awalterschulze/goderive github.com/gogo/protobuf/protoc-gen-gogo
     - name: Generate
