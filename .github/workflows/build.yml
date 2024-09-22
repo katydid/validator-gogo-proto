@@ -22,11 +22,11 @@ jobs:
       run: make build
     - name: Test
       run: make test
-    - vet:
+    - name: Vet
       run: make vet
-    - errcheck:
+    - name: Errcheck
       run: make errcheck
-    - checklicencse:
+    - name: Checklicencse
       run: make checklicense
-    - diff:
+    - name: Diff
       run: make diff
