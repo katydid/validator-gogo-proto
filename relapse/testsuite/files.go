@@ -23,13 +23,13 @@ import (
 
 	"github.com/gogo/protobuf/proto"
 	"github.com/gogo/protobuf/protoc-gen-gogo/descriptor"
-	"github.com/katydid/validator-go/gen"
-	"github.com/katydid/validator-go/parser"
-	"github.com/katydid/validator-go/parser/json"
-	protoparser "github.com/katydid/validator-go/parser/proto"
-	"github.com/katydid/validator-go/parser/xml"
-	"github.com/katydid/validator-go/relapse"
-	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-gogo-proto/gen"
+	"github.com/katydid/validator-gogo-proto/parser"
+	"github.com/katydid/validator-gogo-proto/parser/json"
+	protoparser "github.com/katydid/validator-gogo-proto/parser/proto"
+	"github.com/katydid/validator-gogo-proto/parser/xml"
+	"github.com/katydid/validator-gogo-proto/relapse"
+	"github.com/katydid/validator-gogo-proto/relapse/ast"
 )
 
 func exists(filename string) bool {

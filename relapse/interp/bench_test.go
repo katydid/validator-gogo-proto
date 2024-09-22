@@ -17,8 +17,8 @@ package interp_test
 import (
 	"testing"
 
-	"github.com/katydid/validator-go/relapse/interp"
-	"github.com/katydid/validator-go/relapse/testsuite"
+	"github.com/katydid/validator-gogo-proto/relapse/interp"
+	"github.com/katydid/validator-gogo-proto/relapse/testsuite"
 )
 
 func BenchmarkSuite(b *testing.B) {

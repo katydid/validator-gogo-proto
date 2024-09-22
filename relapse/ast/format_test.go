@@ -18,8 +18,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/katydid/validator-go/relapse/ast"
-	"github.com/katydid/validator-go/relapse/parser"
+	"github.com/katydid/validator-gogo-proto/relapse/ast"
+	"github.com/katydid/validator-gogo-proto/relapse/parser"
 )
 
 func format(t *testing.T, input string, expected string) {

@@ -21,7 +21,7 @@ import (
 	"io"
 	"strconv"
 
-	"github.com/katydid/validator-go/parser"
+	"github.com/katydid/validator-gogo-proto/parser"
 )
 
 // ErrUnquote returns an error that resulted from trying to unquote a string.

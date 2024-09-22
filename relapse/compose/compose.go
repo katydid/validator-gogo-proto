@@ -18,9 +18,9 @@ package compose
 import (
 	"fmt"
 
-	"github.com/katydid/validator-go/relapse/ast"
-	"github.com/katydid/validator-go/relapse/funcs"
-	"github.com/katydid/validator-go/relapse/types"
+	"github.com/katydid/validator-gogo-proto/relapse/ast"
+	"github.com/katydid/validator-gogo-proto/relapse/funcs"
+	"github.com/katydid/validator-gogo-proto/relapse/types"
 )
 
 // Which returns the type that the expression will return.

@@ -16,7 +16,7 @@ package prototests
 
 import (
 	"github.com/gogo/protobuf/proto"
-	. "github.com/katydid/validator-go/parser/debug"
+	. "github.com/katydid/validator-gogo-proto/parser/debug"
 )
 
 // AContainer is a populated Container instance.

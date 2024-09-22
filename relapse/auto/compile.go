@@ -17,8 +17,8 @@ package auto
 import (
 	"errors"
 
-	"github.com/katydid/validator-go/relapse/ast"
-	"github.com/katydid/validator-go/relapse/sets"
+	"github.com/katydid/validator-gogo-proto/relapse/ast"
+	"github.com/katydid/validator-gogo-proto/relapse/sets"
 )
 
 // TODO document

@@ -3,7 +3,7 @@
 package sets
 
 import (
-	ast "github.com/katydid/validator-go/relapse/ast"
+	ast "github.com/katydid/validator-gogo-proto/relapse/ast"
 )
 
 // deriveEquals returns whether this and that are equal.

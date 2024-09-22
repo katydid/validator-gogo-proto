@@ -6,7 +6,7 @@ import (
 	"os"
 	"unicode/utf8"
 
-	"github.com/katydid/validator-go/relapse/token"
+	"github.com/katydid/validator-gogo-proto/relapse/token"
 )
 
 const (

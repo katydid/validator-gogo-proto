@@ -17,7 +17,7 @@ package interp
 import (
 	"sort"
 
-	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-gogo-proto/relapse/ast"
 )
 
 type sortable struct {

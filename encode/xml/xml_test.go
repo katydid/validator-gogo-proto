@@ -19,7 +19,7 @@ import (
 	"reflect"
 	"testing"
 
-	xmlparser "github.com/katydid/validator-go/parser/xml"
+	xmlparser "github.com/katydid/validator-gogo-proto/parser/xml"
 )
 
 func testTranscode(t *testing.T, input interface{}) {

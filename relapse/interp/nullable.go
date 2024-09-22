@@ -17,7 +17,7 @@ package interp
 import (
 	"fmt"
 
-	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-gogo-proto/relapse/ast"
 )
 
 // Nullable returns whether the input Pattern p also matches the empty string.

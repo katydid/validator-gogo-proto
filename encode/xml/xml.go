@@ -25,7 +25,7 @@ import (
 	"io"
 	"strconv"
 
-	"github.com/katydid/validator-go/parser"
+	"github.com/katydid/validator-gogo-proto/parser"
 )
 
 // Encode encodes a parser.Interface into a byte slice containing valid xml.

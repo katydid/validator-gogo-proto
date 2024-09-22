@@ -18,7 +18,7 @@ package main
 import (
 	"strings"
 
-	"github.com/katydid/validator-go/gen"
+	"github.com/katydid/validator-gogo-proto/gen"
 )
 
 const compareStr = `
@@ -944,7 +944,7 @@ func main() {
 		&varer{"Bool", "bool", "bool", "false"},
 		&varer{"String", "string", "string", `""`},
 		&varer{"Bytes", "[]byte", "[]byte", "nil"},
-	}, `"strings"`, `"github.com/katydid/validator-go/parser"`)
+	}, `"strings"`, `"github.com/katydid/validator-gogo-proto/parser"`)
 	gen(typStr, "type.gen.go", []interface{}{
 		&typer{"Double"},
 		&typer{"Int"},

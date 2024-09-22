@@ -15,9 +15,9 @@
 package auto
 
 import (
-	"github.com/katydid/validator-go/relapse/ast"
-	"github.com/katydid/validator-go/relapse/compose"
-	"github.com/katydid/validator-go/relapse/funcs"
+	"github.com/katydid/validator-gogo-proto/relapse/ast"
+	"github.com/katydid/validator-gogo-proto/relapse/compose"
+	"github.com/katydid/validator-gogo-proto/relapse/funcs"
 )
 
 type exprToFunc struct {

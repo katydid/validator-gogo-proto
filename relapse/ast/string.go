@@ -20,7 +20,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/katydid/validator-go/relapse/types"
+	"github.com/katydid/validator-gogo-proto/relapse/types"
 )
 
 // String returns the relapse string representation of the Grammar instance.

@@ -18,11 +18,11 @@ package name
 import (
 	"fmt"
 
-	"github.com/katydid/validator-go/parser"
-	"github.com/katydid/validator-go/relapse/ast"
-	"github.com/katydid/validator-go/relapse/compose"
-	"github.com/katydid/validator-go/relapse/funcs"
-	relapseparser "github.com/katydid/validator-go/relapse/parser"
+	"github.com/katydid/validator-gogo-proto/parser"
+	"github.com/katydid/validator-gogo-proto/relapse/ast"
+	"github.com/katydid/validator-gogo-proto/relapse/compose"
+	"github.com/katydid/validator-gogo-proto/relapse/funcs"
+	relapseparser "github.com/katydid/validator-gogo-proto/relapse/parser"
 )
 
 // EvalName evaluates a name expression given a name value.

@@ -17,7 +17,7 @@ package intern
 import (
 	"testing"
 
-	"github.com/katydid/validator-go/relapse/ast"
+	"github.com/katydid/validator-gogo-proto/relapse/ast"
 )
 
 func TestZip0(t *testing.T) {
