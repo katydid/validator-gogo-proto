@@ -1,13 +1,9 @@
-## Katydid
+## Katydid Validator for Protocol Buffers in Go using GoGoProtobuf
 
-[Katydid](http://katydid.github.io) is a toolkit for trees.
+The [Katydid](http://katydid.github.io) validator for Protocol Buffers in Go using GoGoProtobuf.
 
-![Katydid Logo](https://cdn.rawgit.com/katydid/katydid.github.io/master/logo.png)
-
-Currently there are three tools in the katydid toolkit:
-
-  * Relapse: a regular expression type language for trees that matches up to 1000000s of records per second,
-  * A collection of parsers (protobuf, json, xml, reflected go structures, yaml) which are easily extendable, and
-  * A collection of encoders (protobuf, json, xml, reflected go structures) which are useful for dynamic transcoding.
-
-[more...](http://katydid.github.io)
+The validator is a regular expression type language for protocol buffers that matches up to 1000000s of records per second.
+This package includes:
+* a parser that parses protocol buffers without deserializing the bytes.
+* An encoder for protocol buffers.
+)
