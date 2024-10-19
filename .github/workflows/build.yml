@@ -31,7 +31,6 @@ jobs:
     - name: Install tools
       run: |
         cd gopath/github.com/katydid/validator-gogo-proto
-        go install -x github.com/katydid/validator-go
         go install -x github.com/goccmack/gocc
         go install -x github.com/awalterschulze/goderive
         go install -x github.com/gogo/protobuf/protoc-gen-gogo
