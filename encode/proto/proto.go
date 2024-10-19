@@ -26,7 +26,7 @@ import (
 	"math"
 
 	"github.com/gogo/protobuf/protoc-gen-gogo/descriptor"
-	"github.com/katydid/validator-gogo-proto/parser"
+	"github.com/katydid/validator-go/parser"
 	protoparser "github.com/katydid/validator-gogo-proto/parser/proto"
 )
 

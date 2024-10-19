@@ -15,8 +15,9 @@
 package proto
 
 import (
-	descriptor "github.com/gogo/protobuf/protoc-gen-gogo/descriptor"
 	"strings"
+
+	descriptor "github.com/gogo/protobuf/protoc-gen-gogo/descriptor"
 )
 
 type errUnknown struct {
@@ -27,7 +28,7 @@ func (this *errUnknown) Error() string {
 	return "parser/proto: Could not find " + this.msg
 }
 
-//DescMap is a map of the descriptor.FileDescriptorSet
+// DescMap is a map of the descriptor.FileDescriptorSet
 type DescMap interface {
 	//GetRoot returns the root message that was used to create this map.
 	GetRoot() *descriptor.DescriptorProto
@@ -44,7 +45,7 @@ type descMap struct {
 	msgToField map[*descriptor.DescriptorProto]map[uint64]*descriptor.FieldDescriptorProto
 }
 
-//NewDescriptorMap returns a map of the FileDescriptorSet starting at the message represented by the package name and message name.
+// NewDescriptorMap returns a map of the FileDescriptorSet starting at the message represented by the package name and message name.
 func NewDescriptorMap(pkgName, msgName string, desc *descriptor.FileDescriptorSet) (DescMap, error) {
 	root := desc.GetMessage(pkgName, msgName)
 	if root == nil {

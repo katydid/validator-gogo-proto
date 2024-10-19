@@ -32,16 +32,13 @@ checklicense:
 	typewriterprison.proto \
 	proto/tokens/test.proto \
 	parser/debug/debug.proto \
-	bnf \
 	doc.go \
 	tools/tools.go \
 	.svg \
 	.txt \
-	COPIED_FROM_GO \
 	go.mod \
 	go.sum \
-	install_protoc.sh \
-	parser/yaml/issues.md
+	install_protoc.sh
 
 test:
 	go test ./...
@@ -57,24 +54,17 @@ bench:
 
 vet:
 	go vet ./encode/...
-	go vet ./gen/...
-	go vet ./relapse/...
 
 regenerate:
 	goderive ./...
 	(cd parser && make regenerate)
-	(cd relapse && make regenerate)
-	(cd relapse/funcs && go test -test.run=GenFuncList | grep "func\ " >../../list_of_functions.txt)
 	(cd encode && make regenerate)
 
 clean:
 	go clean ./...
-	(cd relapse && make clean)
 
 nuke: clean
 	(cd parser && make nuke)
-	(cd relapse && make nuke)
-	rm list_of_functions.txt || true
 	go clean -i ./...
 
 gofmt:

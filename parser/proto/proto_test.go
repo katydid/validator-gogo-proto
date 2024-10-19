@@ -19,7 +19,7 @@ import (
 	"testing"
 
 	"github.com/gogo/protobuf/proto"
-	"github.com/katydid/validator-gogo-proto/parser"
+	"github.com/katydid/validator-go/parser"
 	"github.com/katydid/validator-gogo-proto/parser/debug"
 	"github.com/katydid/validator-gogo-proto/parser/proto/prototests"
 )
