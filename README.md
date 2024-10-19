@@ -6,4 +6,3 @@ The validator is a regular expression type language for protocol buffers that ma
 This package includes:
 * a parser that parses protocol buffers without deserializing the bytes.
 * An encoder for protocol buffers.
-)
