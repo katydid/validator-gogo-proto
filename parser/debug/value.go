@@ -15,7 +15,7 @@
 package debug
 
 import (
-	"github.com/katydid/validator-gogo-proto/parser"
+	"github.com/katydid/validator-go/parser"
 )
 
 type errValue struct{}

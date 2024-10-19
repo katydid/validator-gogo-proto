@@ -13,11 +13,8 @@
 # limitations under the License.
 
 regenerate:
-	go install github.com/katydid/validator-gogo-proto/parser/parser-gen
-	parser-gen ./
 	cd debug && make regenerate
 	cd proto && make regenerate
 
 nuke:
 	(cd debug && make nuke)
-	rm err.gen.go || true

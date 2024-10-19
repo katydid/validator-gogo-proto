@@ -24,19 +24,19 @@ import (
 	"github.com/gogo/protobuf/proto"
 	"github.com/gogo/protobuf/protoc-gen-gogo/descriptor"
 	"github.com/katydid/validator-gogo-proto/parser/debug"
-	katydidproto "github.com/katydid/validator-gogo-proto/parser/proto"
+	protoparser "github.com/katydid/validator-gogo-proto/parser/proto"
 	"github.com/katydid/validator-gogo-proto/parser/proto/prototests"
 )
 
 func noMerge(data []byte, desc *descriptor.FileDescriptorSet, pkgName, msgName string) error {
-	parser, err := katydidproto.NewProtoParser(pkgName, msgName, desc)
+	parser, err := protoparser.NewProtoParser(pkgName, msgName, desc)
 	if err != nil {
 		return err
 	}
 	if err := parser.Init(data); err != nil {
 		return err
 	}
-	return katydidproto.NoLatentAppendingOrMerging(parser)
+	return protoparser.NoLatentAppendingOrMerging(parser)
 }
 
 var (
