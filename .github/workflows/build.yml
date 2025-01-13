@@ -23,7 +23,7 @@ jobs:
     - name: Setup Go
       uses: actions/setup-go@v3
       with:
-        go-version: 1.22
+        go-version: 1.23
     - name: Fetch dependencies
       run: |
         cd gopath/github.com/katydid/validator-gogo-proto
@@ -32,9 +32,9 @@ jobs:
       run: |
         cd gopath/github.com/katydid/validator-gogo-proto
         go install -x github.com/goccmack/gocc
+        go install -x github.com/awalterschulze/checklicense
         go install -x github.com/awalterschulze/goderive
         go install -x github.com/gogo/protobuf/protoc-gen-gogo
-        go install -x github.com/katydid/checklicense
     - name: Setup protoc
       run: |
         cd gopath/github.com/katydid/validator-gogo-proto

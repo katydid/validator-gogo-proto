@@ -36,8 +36,6 @@ checklicense:
 	tools/tools.go \
 	.svg \
 	.txt \
-	go.mod \
-	go.sum \
 	install_protoc.sh
 
 test:
