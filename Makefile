@@ -22,7 +22,7 @@ dep:
 	go install -v github.com/awalterschulze/goderive
 
 checklicense:
-	go get github.com/katydid/checklicense
+	go get github.com/awalterschulze/checklicense
 	checklicense . \
 	person.proto \
 	srctree.proto \
