@@ -1,7 +1,7 @@
 github.com/awalterschulze/checklicense v1.0.0 h1:SiRilt26Q+2M238VbXw+e5826mxPypvsj/xgglHDHW8=
 github.com/awalterschulze/checklicense v1.0.0/go.mod h1:oUHvoD4crryzAwDwtdQqCnaZRznAvZE64edH9ukb1K4=
-github.com/awalterschulze/goderive v0.0.0-20240621165703-0a721d5b1d72 h1:G6rewDn2xtJutMBmnsKImjcUOWXTWLPHxxmWfEjmg0E=
-github.com/awalterschulze/goderive v0.0.0-20240621165703-0a721d5b1d72/go.mod h1:rXccmDQDJN/4aGqWxWhq+UmBJeQEkFV/2/rkluP+ipA=
+github.com/awalterschulze/goderive v0.5.0 h1:fzWIV1WVS20EQT3YMXJhjiPZIZom1dlgiabZ/PhT9zo=
+github.com/awalterschulze/goderive v0.5.0/go.mod h1:rXccmDQDJN/4aGqWxWhq+UmBJeQEkFV/2/rkluP+ipA=
 github.com/goccmack/gocc v0.0.0-20230228185258-2292f9e40198 h1:FSii2UQeSLngl3jFoR4tUKZLprO7qUlh/TKKticc0BM=
 github.com/goccmack/gocc v0.0.0-20230228185258-2292f9e40198/go.mod h1:DTh/Y2+NbnOVVoypCCQrovMPDKUGp4yZpSbWg5D0XIM=
 github.com/gogo/protobuf v1.3.2 h1:Ov1cvc58UF3b5XjBnZv7+opcTcQFZebYjWzi34vdm4Q=
