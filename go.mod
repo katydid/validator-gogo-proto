@@ -1,12 +1,15 @@
 module github.com/katydid/validator-gogo-proto
 
-go 1.22
+go 1.23
 
 require (
+	github.com/awalterschulze/checklicense v0.0.0-20250113114552-47a43f05af3c
 	github.com/awalterschulze/goderive v0.0.0-20240621165703-0a721d5b1d72
 	github.com/goccmack/gocc v0.0.0-20230228185258-2292f9e40198
+)
+
+require (
 	github.com/gogo/protobuf v1.3.2
-	github.com/katydid/checklicense v0.0.0-20160404130115-fde9b404b192
 	github.com/katydid/validator-go v0.4.0
 )
 
