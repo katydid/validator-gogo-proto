@@ -1,5 +1,5 @@
-github.com/awalterschulze/checklicense v0.0.0-20250113114552-47a43f05af3c h1:1aGEYkY8qNl8FNnLuRCXg811W0OKNThz639QLl3UJsI=
-github.com/awalterschulze/checklicense v0.0.0-20250113114552-47a43f05af3c/go.mod h1:oUHvoD4crryzAwDwtdQqCnaZRznAvZE64edH9ukb1K4=
+github.com/awalterschulze/checklicense v1.0.0 h1:SiRilt26Q+2M238VbXw+e5826mxPypvsj/xgglHDHW8=
+github.com/awalterschulze/checklicense v1.0.0/go.mod h1:oUHvoD4crryzAwDwtdQqCnaZRznAvZE64edH9ukb1K4=
 github.com/awalterschulze/goderive v0.0.0-20240621165703-0a721d5b1d72 h1:G6rewDn2xtJutMBmnsKImjcUOWXTWLPHxxmWfEjmg0E=
 github.com/awalterschulze/goderive v0.0.0-20240621165703-0a721d5b1d72/go.mod h1:rXccmDQDJN/4aGqWxWhq+UmBJeQEkFV/2/rkluP+ipA=
 github.com/goccmack/gocc v0.0.0-20230228185258-2292f9e40198 h1:FSii2UQeSLngl3jFoR4tUKZLprO7qUlh/TKKticc0BM=
