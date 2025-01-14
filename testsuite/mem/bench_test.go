@@ -26,8 +26,12 @@ import (
 func BenchmarkSuite(b *testing.B) {
 	var bN = flag.Int("b.N", 0, "the number of times the benchmark function's target code must run")
 	flag.Parse()
-	if !testsuite.BenchSuiteExists() {
-		b.Skip("benchsuite not available")
+	exists, err := testsuite.BenchSuiteExists()
+	if !exists {
+		if err != nil {
+			b.Fatal(err)
+		}
+		b.Skip()
 	}
 	benches, err := testsuite.ReadBenchmarkSuite()
 	if err != nil {
