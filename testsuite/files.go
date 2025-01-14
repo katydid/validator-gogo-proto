@@ -39,16 +39,31 @@ var benchpath string
 
 func init() {
 	gopath := os.Getenv("GOPATH")
+	if gopath == "" {
+		gopath = "../../../../../../"
+	}
 	testpath = filepath.Join(gopath, "src/github.com/katydid/testsuite/validator/tests")
 	benchpath = filepath.Join(gopath, "src/github.com/katydid/testsuite/validator/benches")
 }
 
-func TestSuiteExists() bool {
-	return exists(testpath)
+func TestSuiteExists() (bool, error) {
+	if exists(testpath) {
+		return true, nil
+	}
+	if os.Getenv("TESTSUITE") == "MUST" {
+		return false, fmt.Errorf("testsuite does not exist at %v", testpath)
+	}
+	return false, nil
 }
 
-func BenchSuiteExists() bool {
-	return exists(benchpath)
+func BenchSuiteExists() (bool, error) {
+	if exists(testpath) {
+		return true, nil
+	}
+	if os.Getenv("TESTSUITE") == "MUST" {
+		return false, fmt.Errorf("testsuite does not exist at %v", testpath)
+	}
+	return false, fmt.Errorf("benchsuite does not exist at %v", testpath)
 }
 
 func getFolders(path string) (map[string][]string, error) {
