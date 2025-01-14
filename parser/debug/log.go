@@ -22,7 +22,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/katydid/validator-go/parser"
+	"github.com/katydid/parser-go/parser"
 )
 
 // Logger is an interface for a type that is made to log debug info.

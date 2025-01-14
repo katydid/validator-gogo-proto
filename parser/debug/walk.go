@@ -21,7 +21,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/katydid/validator-go/parser"
+	"github.com/katydid/parser-go/parser"
 )
 
 func getValue(p parser.Interface) interface{} {
