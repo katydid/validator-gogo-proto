@@ -24,9 +24,9 @@ import (
 	"github.com/gogo/protobuf/proto"
 	"github.com/gogo/protobuf/protoc-gen-gogo/descriptor"
 	"github.com/katydid/parser-go/parser"
+	protoparser "github.com/katydid/parser-gogo-proto/proto"
 	"github.com/katydid/validator-go/validator"
 	"github.com/katydid/validator-go/validator/ast"
-	protoparser "github.com/katydid/validator-gogo-proto/parser/proto"
 )
 
 func exists(filename string) bool {
