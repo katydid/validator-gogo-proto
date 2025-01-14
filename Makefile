@@ -12,26 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-.PHONY: nuke dep regenerate gofmt build test
+.PHONY: nuke dep gofmt build test
 
-all: nuke dep regenerate build test vet
+all: nuke dep build test
 
 dep:
 	go install github.com/gogo/protobuf/protoc-gen-gogo
-	go install -v github.com/goccmack/gocc
-	go install -v github.com/awalterschulze/goderive
 
 checklicense:
 	go get github.com/awalterschulze/checklicense
 	checklicense . \
-	person.proto \
-	srctree.proto \
-	puddingmilkshake.proto \
-	taxonomy.proto \
-	treeregister.proto \
-	typewriterprison.proto \
-	proto/tokens/test.proto \
-	parser/debug/debug.proto \
 	doc.go \
 	tools/tools.go \
 	.svg \
@@ -50,19 +40,10 @@ install:
 bench:
 	go test -test.v -test.run=XXX -test.bench=. ./...
 
-vet:
-	go vet ./encode/...
-
-regenerate:
-	goderive ./...
-	(cd parser && make regenerate)
-	(cd encode && make regenerate)
-
 clean:
 	go clean ./...
 
 nuke: clean
-	(cd parser && make nuke)
 	go clean -i ./...
 
 gofmt:
