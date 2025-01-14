@@ -23,8 +23,7 @@ import (
 
 	"github.com/gogo/protobuf/proto"
 	"github.com/gogo/protobuf/protoc-gen-gogo/descriptor"
-	"github.com/katydid/validator-go/gen"
-	"github.com/katydid/validator-go/parser"
+	"github.com/katydid/parser-go/parser"
 	"github.com/katydid/validator-go/validator"
 	"github.com/katydid/validator-go/validator/ast"
 	protoparser "github.com/katydid/validator-gogo-proto/parser/proto"
@@ -180,7 +179,7 @@ func readTestFolder(path string) (*Test, error) {
 	if p == nil {
 		return nil, fmt.Errorf("couldn't find valid.* or invalid.* filename inside <%s>", path)
 	}
-	name = name + gen.CapFirst(codecName)
+	name = name + capFirst(codecName)
 	return &Test{
 		Name:     name,
 		Grammar:  g,

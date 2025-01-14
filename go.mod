@@ -10,7 +10,9 @@ require (
 
 require (
 	github.com/gogo/protobuf v1.3.2
-	github.com/katydid/validator-go v0.4.0
+	github.com/katydid/parser-go v0.6.0
+	github.com/katydid/parser-go-reflect v0.1.0
+	github.com/katydid/validator-go v0.5.0
 )
 
 require (

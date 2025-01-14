@@ -17,7 +17,7 @@ package intern_test
 import (
 	"testing"
 
-	"github.com/katydid/validator-go/parser"
+	"github.com/katydid/parser-go/parser"
 	"github.com/katydid/validator-go/validator/ast"
 	"github.com/katydid/validator-go/validator/intern"
 	"github.com/katydid/validator-go/validator/interp"

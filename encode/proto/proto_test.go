@@ -21,7 +21,7 @@ import (
 	"time"
 
 	"github.com/gogo/protobuf/proto"
-	reflectparser "github.com/katydid/validator-go/parser/reflect"
+	reflectparser "github.com/katydid/parser-go-reflect/reflect"
 	"github.com/katydid/validator-gogo-proto/encode/proto/prototests"
 )
 
