@@ -7,6 +7,6 @@ require github.com/awalterschulze/checklicense v1.0.0
 require (
 	github.com/gogo/protobuf v1.3.2
 	github.com/katydid/parser-go v0.6.0
-	github.com/katydid/parser-gogo-proto v0.2.0
-	github.com/katydid/validator-go v0.5.0
+	github.com/katydid/parser-gogo-proto v0.2.1
+	github.com/katydid/validator-go v0.5.3
 )
