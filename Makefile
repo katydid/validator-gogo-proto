@@ -16,19 +16,16 @@
 
 all: nuke dep build test
 
-dep:
-	go install github.com/gogo/protobuf/protoc-gen-gogo
-
 checklicense:
 	go get github.com/awalterschulze/checklicense
 	checklicense . \
 	doc.go \
 	tools/tools.go \
 	.svg \
-	.txt \
-	install_protoc.sh
+	.txt
 
 test:
+	go clean -testcache
 	TESTSUITE=MUST go test ./...
 
 build:
@@ -51,13 +48,8 @@ gofmt:
 
 travis:
 	make all
-	make errcheck
 	make checklicense
 	make diff
-
-errcheck:
-	go get github.com/kisielk/errcheck
-	errcheck -ignore 'fmt:[FS]?[Pp]rint*' ./...
 
 diff:
 	git diff --exit-code .

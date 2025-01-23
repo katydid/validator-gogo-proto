@@ -6,5 +6,4 @@ package tools
 
 import (
 	_ "github.com/awalterschulze/checklicense"
-	_ "github.com/gogo/protobuf/protoc-gen-gogo"
 )
