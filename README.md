@@ -1,6 +1,6 @@
 ## Katydid Validator for Protocol Buffers in Go using GoGoProtobuf
 
-**DEPRECATED: See [validator-go-proto](https://github.com/katydid/validator-go-proto)**
+**DEPRECATED: This repo has been replaced by [validator-go-proto](https://github.com/katydid/validator-go-proto) which no longer depends on gogoprotobuf**
 
 [![GoDoc](https://godoc.org/github.com/katydid/validator-gogo-proto?status.svg)](https://godoc.org/github.com/katydid/validator-gogo-proto) [![Build Status](https://github.com/katydid/validator-gogo-proto/actions/workflows/build.yml/badge.svg)](https://github.com/katydid/validator-gogo-proto/actions)
 
