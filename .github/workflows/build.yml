@@ -13,8 +13,8 @@ jobs:
     - name: Checkout testsuite
       uses: actions/checkout@v4
       with:
-        repository: katydid/testsuite
-        path: gopath/src/github.com/katydid/testsuite
+        repository: katydid/validator-testsuite
+        path: gopath/src/github.com/katydid/validator-testsuite
     - name: Setup Go
       uses: actions/setup-go@v3
       with:

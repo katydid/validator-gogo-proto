@@ -8,8 +8,8 @@ github.com/katydid/parser-go-xml v0.1.1 h1:W6Xaxwy1Gh231NCM13L4Bdxfi4aYE6JBTdYsv
 github.com/katydid/parser-go-xml v0.1.1/go.mod h1:I9tZR4C/G6T4QleGfiF1qg5zOMcqp2ASbevDYMvUIdU=
 github.com/katydid/parser-gogo-proto v0.3.1 h1:YN2aiD0tV4De4Scb/o4Pq9GcDEyJ43mZ/SFtM5hRWY0=
 github.com/katydid/parser-gogo-proto v0.3.1/go.mod h1:y5qvRjQzlwdMECeM/dJTyuGXRJHqZJQx36P64T/yR+A=
-github.com/katydid/validator-go v0.5.4 h1:MYGjpFl820it8+/h2oqngaHhjGfQNR2LJ4dMFZmyRK8=
-github.com/katydid/validator-go v0.5.4/go.mod h1:E+tP+bOx5KjF44Yi7gz35D/C2qhYxHJAHCQn178uNB4=
+github.com/katydid/validator-go v0.6.3 h1:+aQN0PLDcCGYFNqVISEtCrzOL8vqI5vCp3wNpCSUZRc=
+github.com/katydid/validator-go v0.6.3/go.mod h1:nsH1ed186z+HV3hhaa26Ls1hPJE7WO8CKXXEkCrOVCQ=
 github.com/kisielk/errcheck v1.5.0/go.mod h1:pFxgyoBC7bSaBwPgfKdkLd5X25qrDl4LWUI2bnpBCr8=
 github.com/kisielk/gotool v1.0.0/go.mod h1:XhKaO+MFFWcvkIS/tQcRk01m1F5IRFswLeQ+oQHNcck=
 github.com/yuin/goldmark v1.1.27/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
